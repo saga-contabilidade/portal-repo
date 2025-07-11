@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - SagaHub</title>
+  <link rel="stylesheet" href="styles/login.css" />
+  <link rel="icon" href="img/Logo.png" type="image/png" />
+</head>
+<body>
+  <div class="container">
+    <!-- LADO ESQUERDO -->
+    <div class="left-panel">
+      <div class="logo-topo">
+        <img src="assets/img/logo-branca.png" alt="logo-saga" />
+      </div>
+
+      <div class="quote-box">
+        <blockquote>
+          “Eu posso aceitar o fracasso. Todo mundo falha em alguma coisa. Mas eu não posso aceitar não tentar.”
+        </blockquote>
+      </div>
+      <p class="author">~ Jordan, Michael</p>
+      <img src="assets/img/logo-cubo.png" alt="logo-cubo" class="logo-cube" />
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div class="right-panel">
+      <div class="login-box">
+        <h1>Bem-vindo(a) de volta!</h1>
+        <p>Acesse a sua conta para continuar</p>
+        <form id="login-form">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required />
+
+          <label for="password">Senha</label>
+          <input type="password" id="password" required />
+          <div class="forgot-password">
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+
+          <button type="submit" id="login-button">Entrar</button>
+          <p id="error-message"></p>
+        </form>
+        <footer>© 2025 Contabilidade Moderna. Todos os direitos reservados.</footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
