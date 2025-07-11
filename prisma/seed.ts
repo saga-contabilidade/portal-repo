@@ -55,7 +55,7 @@ async function main() {
   });
 
   console.log('Usuários de exemplo criados.');
-  console.log('Cliente de exemplo criado.')
+  console.log('Cliente de exemplo criado.');
   console.log('Seeding finalizado com sucesso! ✅');
 }
 
