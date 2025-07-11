@@ -37,3 +37,29 @@ model User {
 
   @@map("user")
 }
+
+enum StatusFinanceiro {
+  EM_DIA
+  PENDENTE
+  ATRASADO
+  NEGOCIANDO
+}
+
+model Cliente {
+  id            String    @id @default(uuid())
+  cod           Int       @unique
+  nome          String    
+  cpf           String    @unique
+  senhaGovHash  String
+  email         String?
+  telefone      String?
+  responsavel   String
+  pendencias    String?
+  valorIR       Decimal
+  status        StatusFinanceiro
+
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  @@map("cliente")
+}
