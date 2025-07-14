@@ -12,6 +12,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* NOVO: Cor de fundo para telas maiores que o container */
+  background-color: #f0f2f5; 
 }
 
 .container {
@@ -19,9 +21,13 @@ body {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  max-width: 1920px;
+  max-height: 1080px; 
+  background-color: #a32924;
+  overflow: hidden;
 }
 
-/* LADO ESQUERDO */
+/* --- LADO ESQUERDO --- */
 .left-panel {
   flex: 1;
   background-color: #a32924;
@@ -31,20 +37,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   text-align: center;
-}
-
-.logo-topo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 30px;
+  position: relative;
 }
 
 .logo-topo img {
-  max-width: 300px;
+  max-width: 250px; 
+  position: absolute;
+  top: 75px;
+  transform: translateX(-50%); 
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -52,31 +53,35 @@ body {
 }
 
 .quote-box {
-  max-width: 80%;
-  font-size: 2.0rem;
+  max-width: 85%;
+  font-size: 1.5rem;
   font-style: italic;
   line-height: 1.5;
-  margin-top: 20px;
+  margin: 40px 0; 
 }
 
 .author {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: italic;
+  position: absolute;
+  bottom: 50px;
+  left: 70%; 
+  transform: translateX(-50%); 
+  width: 200px;
+  height: auto;
 }
 
 .logo-cube {
   position: absolute;
   bottom: 30px;
-  left: 30px;
-  width: 80px;
+  left: 15%; 
+  transform: translateX(-50%); 
+  width: 70px;
   height: auto;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
-/* LADO DIREITO */
+/* --- LADO DIREITO --- */
 .right-panel {
   flex: 1;
   background-color: #f7f7f7;
@@ -88,10 +93,10 @@ body {
 
 .login-box {
   background: white;
-  padding: 50px;
+  padding: 40px;
   border-radius: 12px;
-  width: 120%;
-  max-width: 480px;
+  width: 100%; 
+  max-width: 450px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,25 +116,34 @@ form label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
+  color: #333; 
 }
 
 form input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 12px; 
+  margin-top: 8px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+form input:focus {
+  border-color: #a32924; 
+  box-shadow: 0 0 0 3px rgba(163, 41, 36, 0.2); 
+  outline: none; 
 }
 
 .forgot-password {
   text-align: right;
-  margin: 8px 0 18px;
+  margin: 10px 0 20px;
 }
 
 .forgot-password a {
   color: #a32924;
   font-size: 0.9rem;
   text-decoration: none;
+  font-weight: 500;
 }
 
 button {
@@ -137,25 +151,75 @@ button {
   background-color: #a32924;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 15px; 
   border-radius: 6px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #b32c33; 
 }
 
 button:disabled {
-  background-color: #aaa;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 #error-message {
-  margin-top: 12px;
-  color: red;
+  margin-top: 15px;
+  color: #d93025;
   text-align: center;
+  font-weight: 500;
 }
 
 footer {
-  margin-top: 20px;
-  font-size: 0.75rem;
+  margin-top: 25px;
+  font-size: 0.8rem;
   color: #888;
   text-align: center;
+}
+
+
+@media (max-width: 850px) {
+  body {
+    padding: 0;
+    height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    max-width: none; 
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .left-panel {
+    display: none;
+    padding: 30px 20px;
+    position: static; 
+  }
+
+  .quote-box {
+    font-size: 1.2rem;
+  }
+
+  .author {
+    position: static;
+    padding-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .logo-cube {
+    display: none; 
+  }
+
+  .login-box {
+    padding: 30px 25px;
+  }
 }
