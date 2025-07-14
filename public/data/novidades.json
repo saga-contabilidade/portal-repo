@@ -1,0 +1,32 @@
+[
+  {
+    "titulo": "Prazo do IR termina em breve",
+    "descricao": "Fique atento: o prazo para entrega da declaração do Imposto de Renda termina no próximo mês.",
+    "link": "https://www.gov.br/receitafederal/ir"
+  },
+  {
+    "titulo": "Simples Nacional: novas regras",
+    "descricao": "Confira o que muda no enquadramento e nas alíquotas para 2025.",
+    "link": "https://www.sebrae.com.br/sites/PortalSebrae/simples-nacional"
+  },
+  {
+    "titulo": "MEI poderá contratar até 3 funcionários",
+    "descricao": "Novo projeto no Senado amplia o limite de colaboradores para MEIs.",
+    "link": "https://www12.senado.leg.br/noticias"
+  },
+  {
+    "titulo": "Receita lança nova plataforma para NF-e",
+    "descricao": "Nova plataforma moderniza o acesso e o controle de notas fiscais eletrônicas.",
+    "link": "https://www.gov.br/receitafederal/novidades"
+  },
+  {
+    "titulo": "DASN-SIMEI 2025 já pode ser enviada",
+    "descricao": "Declaração Anual do Simples Nacional para o MEI já está disponível no portal do empreendedor.",
+    "link": "https://www.gov.br/empresas-e-negocios/mei"
+  },
+  {
+    "titulo": "Novo sistema do FGTS Digital entra em operação",
+    "descricao": "Empregadores devem se adaptar ao novo layout de envio dos dados trabalhistas.",
+    "link": "https://www.caixa.gov.br"
+  }
+]

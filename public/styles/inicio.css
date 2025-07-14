@@ -116,31 +116,6 @@ body, html {
     font-size: 1.2rem;
 }
 
-/* AVISOS SECTION */
-.avisos {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.avisos h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.aviso-card {
-    background: white;
-    margin: 10px auto;
-    padding: 20px;
-    border-left: 5px solid #a32924;
-    max-width: 700px;
-    text-align: left;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    color: #555;
-    font-size: 1rem;
-}
-
 .novidades {
   padding: 60px 20px;
   background-color: #f9f9f9;
@@ -185,4 +160,133 @@ body, html {
 .card-novidade p {
   font-size: 0.95rem;
   color: #444;
+}
+
+.card-novidade-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  max-width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.card-novidade-link:hover {
+  transform: translateY(-4px);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f9f9;
+}
+
+.novidades {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.novidades h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #a32924;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.categoria-data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+.autor-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.autor-info img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.autor-nome {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.autor-cargo {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.btn-leia-mais {
+  margin-top: 20px;
+  align-self: flex-end;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-leia-mais:hover {
+  background-color: #a32924;
 }
