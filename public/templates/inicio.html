@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SagaHub - Início</title>
+    <link rel="stylesheet" href="/public/styles/inicio.css" />
+    <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <img src="/public/assets/img/logo-cubo.png" alt="Logo SagaHub" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="/public/templates/inicio.html">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="/public/login.html" class="btn">Login</a>
+            </div>
+        </nav>
+        <div class="hero-text">
+            <h1>Bem-vindo à SagaHub</h1>
+            <p>Organizando sua contabilidade com eficiência e clareza.</p>
+        </div>
+    </header>
+
+    <section class="avisos">
+        <h2>Avisos Importantes</h2>
+        <div class="aviso-card">
+            <p><strong>[10/07/2025]</strong> Fique atento: prazo para entrega do DAS é dia 20/07.</p>
+        </div>
+        <div class="aviso-card">
+            <p><strong>[05/07/2025]</strong> Sistema ficará fora do ar das 00h às 02h para manutenção.</p>
+        </div>
+    </section>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

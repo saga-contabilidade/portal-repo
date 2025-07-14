@@ -1,0 +1,142 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url('/public/assets/img/escritorio.png') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* fundo branco 85% opaco */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px); /* opcional, deixa mais "vidro fosco" */
+    z-index: 1000;
+}
+
+
+.navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* LINKS DA NAVBAR */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links a {
+    color: #333;
+}
+
+/* BOTÕES */
+.auth-buttons .btn {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #a32924;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.auth-buttons .btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.navbar.scrolled .btn-outline {
+    border: 2px solid #a32924;
+    color: #a32924;
+}
+
+.navbar.scrolled .btn {
+    background-color: #a32924;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #a32924;
+}
+
+.navbar.scrolled .btn-outline:hover {
+    background:#a32924;
+    color: white;
+}
+
+/* HERO TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+/* AVISOS SECTION */
+.avisos {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.avisos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.aviso-card {
+    background: white;
+    margin: 10px auto;
+    padding: 20px;
+    border-left: 5px solid #a32924;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: #555;
+    font-size: 1rem;
+}
