@@ -140,3 +140,49 @@ body, html {
     color: #555;
     font-size: 1rem;
 }
+
+.novidades {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.novidades h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #a32924;
+}
+
+.cards-novidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-novidade {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 280px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card-novidade:hover {
+  transform: translateY(-4px);
+}
+
+.card-novidade h3 {
+  font-size: 1.1rem;
+  color: #a32924;
+  margin-bottom: 10px;
+}
+
+.card-novidade p {
+  font-size: 0.95rem;
+  color: #444;
+}
