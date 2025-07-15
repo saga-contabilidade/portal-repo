@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SagaHub</title>
+    <link rel="stylesheet" href="/public/styles/hub.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo" style="width: 28px; height: 28px; filter: drop-shadow(0 2px 6px rgba(163,41,36,0.25));">
+                <span>SagaHub</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active">Notícias</a>
+                <a href="#">Fiscal Interno</a>
+                <a href="#">Kanban</a>
+                <a href="#">Chamados</a>
+                <a href="#">Chat Interno</a>
+            </nav>
+            <div class="navbar-right">
+                <div class="notifications">
+                    <span class="icon-bell"></span>
+                    <span class="notification-dot"></span>
+                </div>
+                <div class="profile">
+                    <span class="profile-icon"></span>
+                    <div class="profile-info">
+                        <span class="profile-name">João Silva</span>
+                        <span class="profile-role">Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-header">
+                <div class="welcome-logo">
+                    <img src="/public/assets/img/logo-cubo.png" alt="NewsHub Logo" style="width: 24px; height: 24px; filter: drop-shadow(0 2px 6px rgba(163,41,36,0.25));">
+                    <span>SagaHub</span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar notícias...">
+                </div>
+                <div class="user-greeting">
+                    <span class="profile-icon"></span>
+                    <div>
+                        <span>Olá, João Silva!</span>
+                        <span class="welcome-back">Bem-vindo de volta</span>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-info">
+                <h1>Bom dia, João Silva!</h1>
+                <div class="date-time">
+                    <span class="icon-calendar"></span>
+                    <span>terça-feira, 15 de julho de 2025</span>
+                </div>
+                <div class="last-update">
+                    <span>Última atualização</span>
+                    <span>11:53</span>
+                </div>
+            </div>
+            <div class="metrics-cards">
+                <div class="metric-card">
+                    <span class="metric-title">Notícias Hoje</span>
+                    <span class="metric-value">24</span>
+                    <span class="metric-sub">+12% desde ontem</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-title">Atualizações</span>
+                    <span class="metric-value">8</span>
+                    <span class="metric-sub metric-positive">+5 desde ontem</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-title">Eventos</span>
+                    <span class="metric-value">3</span>
+                    <span class="metric-sub metric-today">Hoje desde ontem</span>
+                </div>
+            </div>
+        </section>
+        <section class="news-portal">
+            <div class="news-header">
+                <h2>Portal de Notícias</h2>
+                <span class="trending">Em alta agora</span>
+            </div>
+            <p class="news-subtitle">Fique por dentro das últimas novidades</p>
+            <div class="news-filters">
+                <button class="filter active">Todas</button>
+                <button class="filter">Tecnologia</button>
+                <button class="filter">Meio Ambiente</button>
+                <button class="filter">Saúde</button>
+                <button class="filter">Economia</button>
+                <button class="filter">Educação</button>
+                <button class="filter">Esportes</button>
+            </div>
+            <div class="news-cards">
+                <div class="news-card">
+                    <div class="news-image urgent">
+                        <span class="urgent-label">URGENTE</span>
+                        <span class="category-label">Tecnologia</span>
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="IA">
+                    </div>
+                    <div class="news-content">
+                        <h3>Revolução da IA: Novos Desenvolvimentos em Machine...</h3>
+                        <p>Descobertas recentes em inteligência artificial prometem transformar a forma como interagimos com a tecnologia no dia a dia.</p>
+                        <div class="news-meta">
+                            <span>370 dias atrás</span>
+                            <span>•</span>
+                            <span>5 min</span>
+                        </div>
+                        <div class="news-actions">
+                            <span>245</span>
+                            <span class="icon-like"></span>
+                            <span class="icon-share"></span>
+                            <a href="#">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <span class="category-label">Meio Ambiente</span>
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Meio Ambiente">
+                    </div>
+                    <div class="news-content">
+                        <h3>Sustentabilidade: Empresas Adotam Práticas Verdes</h3>
+                        <p>Grandes corporações investem em tecnologias sustentáveis para reduzir impacto ambiental e melhorar eficiência.</p>
+                        <div class="news-meta">
+                            <span>370 dias atrás</span>
+                            <span>•</span>
+                            <span>3 min</span>
+                        </div>
+                        <div class="news-actions">
+                            <span>189</span>
+                            <span class="icon-like"></span>
+                            <span class="icon-share"></span>
+                            <a href="#">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <span class="category-label">Saúde</span>
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Saúde Digital">
+                    </div>
+                    <div class="news-content">
+                        <h3>Inovações em Saúde Digital Transformam Atendimento</h3>
+                        <p>Telemedicina e aplicativos de saúde revolucionam o acesso a cuidados médicos em todo o país.</p>
+                        <div class="news-meta">
+                            <span>370 dias atrás</span>
+                            <span>•</span>
+                            <span>4 min</span>
+                        </div>
+                        <div class="news-actions">
+                            <span>156</span>
+                            <span class="icon-like"></span>
+                            <span class="icon-share"></span>
+                            <a href="#">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 
