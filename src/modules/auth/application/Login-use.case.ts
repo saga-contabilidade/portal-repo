@@ -1,5 +1,5 @@
-import { PrismaUserRepository } from '@/modules/auth/infrastructure/Prisma-user.repository';
-import { JwtService } from '@/modules/auth/infrastructure/Jwt.service';
+import { PrismaUserRepository } from '@/modules/auth/infrastructure/data/Prisma-user.repository';
+import { JwtService } from '@/modules/auth/infrastructure/services/Jwt.service';
 import bcrypt from 'bcrypt';
 
 type LoginInput = { email: string; password: string };
