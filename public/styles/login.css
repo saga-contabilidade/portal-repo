@@ -74,7 +74,7 @@ body {
 .logo-cube {
   position: absolute;
   bottom: 30px;
-  left: 15%; 
+  left: 10%; 
   transform: translateX(-50%); 
   width: 70px;
   height: auto;
