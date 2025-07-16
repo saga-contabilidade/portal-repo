@@ -1,17 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ForgotPasswordUseCase } from '@/modules/auth/application/ForgotPassword-use.case';
+import { UserNotFoundError } from '@/modules/auth/application/errors/UserNotFoundError'
 
 export async function POST(req: NextRequest) {
+    let email: string;
+
     try {
-        const { email } = await req.json();
+        const body = await req.json();
+        email  = body.email;
+
         if (!email) {
-            return NextResponse.json({ error: 'E-mail é obrigatório.' }, { status: 400 });
+            return NextResponse.json(
+                { error: 'E-mail é obrigatório.' }, 
+                { status: 400 }
+            );
         }
+
         const useCase = new ForgotPasswordUseCase();
         await useCase.execute(email);
-        // Sempre retorna sucesso para não expor se o e-mail existe
-        return NextResponse.json({ message: 'Se o e-mail existir, você receberá instruções para redefinir sua senha.' });
+        
+        return NextResponse.json(
+            { message: 'Se o e-mail existir, você receberá instruções para redefinir sua senha.' }
+        );
+
     } catch (error: any) {
-        return NextResponse.json({ error: error.message || 'Erro ao solicitar redefinição de senha.' }, { status: 500 });
-    }
+
+        if (error instanceof UserNotFoundError){
+            return NextResponse.json(
+                { message: 'Se o e-mail existir, você receberá instruções para redefinir sua senha.' }
+            );
+        }
+        return NextResponse.json(
+            {error: 'Ocorreu um erro inesperado ao processar a solicitação.' }, { status: 500 }
+        )
+    };
 } 
