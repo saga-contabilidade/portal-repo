@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPasswordResetTokenRepository } from '@/modules/auth/infrastructure/data/Prisma-passwordResetToken.repository';
 import { MailtrapClientService } from '@/modules/auth/infrastructure/services/Send.service';
 import { randomUUID } from 'crypto';
-import { UserNotFoundError } from './errors/UserNotFoundError';
+import { UserNotFoundError } from './error/UserNotFoundError';
 
 export class ForgotPasswordUseCase {
     private prisma: PrismaClient;

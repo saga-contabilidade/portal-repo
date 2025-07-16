@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ForgotPasswordUseCase } from '@/modules/auth/application/ForgotPassword-use.case';
-import { UserNotFoundError } from '@/modules/auth/application/errors/UserNotFoundError'
+import { UserNotFoundError } from '@/modules/auth/application/error/UserNotFoundError'
 
 export async function POST(req: NextRequest) {
     let email: string;
