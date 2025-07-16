@@ -79,10 +79,28 @@ button:hover {
   background-color: #871d1a;
 }
 
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 #mensagem-sucesso {
   margin-top: 10px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  color: #222 !important;
+  display: block !important;
+  min-height: 1.2em;
+}
+
+#mensagem-sucesso.erro {
+  color: #d93025 !important;
+  text-align: center;
+}
+
+#mensagem-sucesso.sucesso {
+  color: green !important;
+  text-align: center;
 }
 
 .voltar-login {
