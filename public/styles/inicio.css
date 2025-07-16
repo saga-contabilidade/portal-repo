@@ -1,0 +1,292 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url('/public/assets/img/escritorio.png') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* fundo branco 85% opaco */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px); /* opcional, deixa mais "vidro fosco" */
+    z-index: 1000;
+}
+
+
+.navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* LINKS DA NAVBAR */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links a {
+    color: #333;
+}
+
+/* BOTÕES */
+.auth-buttons .btn {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #a32924;
+    color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.auth-buttons .btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.navbar.scrolled .btn-outline {
+    border: 2px solid #a32924;
+    color: #a32924;
+}
+
+.navbar.scrolled .btn {
+    background-color: #a32924;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #a32924;
+}
+
+.navbar.scrolled .btn-outline:hover {
+    background:#a32924;
+    color: white;
+}
+
+/* HERO TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+.novidades {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.novidades h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #a32924;
+}
+
+.cards-novidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-novidade {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 280px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card-novidade:hover {
+  transform: translateY(-4px);
+}
+
+.card-novidade h3 {
+  font-size: 1.1rem;
+  color: #a32924;
+  margin-bottom: 10px;
+}
+
+.card-novidade p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.card-novidade-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  max-width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.card-novidade-link:hover {
+  transform: translateY(-4px);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f9f9;
+}
+
+.novidades {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.novidades h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #a32924;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.categoria-data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+.autor-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.autor-info img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.autor-nome {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.autor-cargo {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.btn-leia-mais {
+  margin-top: 20px;
+  align-self: flex-end;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-leia-mais:hover {
+  background-color: #a32924;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SagaHub - Início</title>
+  <link rel="stylesheet" href="/public/styles/inicio.css" />
+  <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+  <style>
+    .card-novidade-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease;
+      flex: 1 1 calc(25% - 20px);
+      max-width: calc(25% - 20px);
+    }
+
+    .card-novidade-link:hover {
+      transform: translateY(-6px);
+    }
+
+    .novidades {
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .novidades h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #a32924;
+    }
+
+    .cards-novidades {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card-novidade {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card-novidade:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .card-novidade h3 {
+      font-size: 1.2rem;
+      color: #a32924;
+      margin-bottom: 15px;
+    }
+
+    .card-novidade p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+      .card-novidade-link {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card-novidade-link {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <img src="/public/assets/img/logo-cubo.png" alt="Logo SagaHub" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="/public/templates/inicio.html">Início</a></li>
+        <li><a href="/public/templates/contato.html">Contato</a></li>
+        <li><a href="/public/templates/sobre.html">Sobre</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="/public/login.html" class="btn">Login</a>
+      </div>
+    </nav>
+    <div class="hero-text">
+      <h1>Bem-vindo à SagaHub</h1>
+      <p>Organizando sua contabilidade com eficiência e clareza.</p>
+    </div>
+  </header>
+
+  <section class="novidades">
+    <h2>Novidades e Tendências</h2>
+    <div class="card-grid" id="novidades-container">
+      <!-- Cards dinâmicos via JavaScript -->
+    </div>
+  </section>
+
+  <script>
+    const container = document.getElementById('novidades-container');
+
+    const novidades = [
+      {
+        imagem: "https://source.unsplash.com/400x300/?finance",
+        categoria: "Contabilidade",
+        data: "14/07/2025",
+        titulo: "Prazo para pagamento do DAS se aproxima",
+        descricao: "Empreendedores do Simples Nacional devem se atentar ao prazo para evitar multas.",
+        autor: "Paulo Lima",
+        funcao: "Contador",
+        foto: "https://randomuser.me/api/portraits/men/32.jpg",
+        link: "https://www.gov.br/receitafederal"
+      },
+      {
+        imagem: "https://source.unsplash.com/400x300/?invoice",
+        categoria: "Fiscal",
+        data: "13/07/2025",
+        titulo: "Nova versão da NF-e entra em vigor",
+        descricao: "Versão 4.0 da Nota Fiscal Eletrônica passa a ser obrigatória para todos os emissores.",
+        autor: "Ana Borges",
+        funcao: "Consultora Fiscal",
+        foto: "https://randomuser.me/api/portraits/women/45.jpg",
+        link: "https://www.nfe.fazenda.gov.br"
+      },
+      {
+        imagem: "https://source.unsplash.com/400x300/?tax",
+        categoria: "Tributário",
+        data: "10/07/2025",
+        titulo: "Reforma Tributária começa a valer em 2026",
+        descricao: "Empresas terão até o fim do ano para se adaptarem às novas regras fiscais.",
+        autor: "Lucas Almeida",
+        funcao: "Analista Tributário",
+        foto: "https://randomuser.me/api/portraits/men/67.jpg",
+        link: "https://www12.senado.leg.br/noticias"
+      },
+      {
+        imagem: "https://source.unsplash.com/400x300/?law",
+        categoria: "Legal",
+        data: "09/07/2025",
+        titulo: "Alteração no MEI: limite de contratação aumentará",
+        descricao: "Nova lei permitirá que MEIs contratem até dois funcionários.",
+        autor: "Camila Duarte",
+        funcao: "Especialista Jurídica",
+        foto: "https://randomuser.me/api/portraits/women/22.jpg",
+        link: "https://www.gov.br/empresas-e-negocios"
+      }
+    ];
+
+    novidades.forEach(n => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${n.imagem}" alt="${n.titulo}" class="thumb">
+        <div class="card-content">
+          <div class="categoria-data">
+            <span>${n.categoria}</span>
+            <span>${n.data}</span>
+          </div>
+          <h3>${n.titulo}</h3>
+          <p>${n.descricao}</p>
+          <div class="autor-info">
+            <img src="${n.foto}" alt="${n.autor}">
+            <div>
+              <div class="autor-nome">${n.autor}</div>
+              <div class="autor-cargo">${n.funcao}</div>
+            </div>
+          </div>
+          <a class="btn-leia-mais" href="${n.link}" target="_blank">Leia mais</a>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

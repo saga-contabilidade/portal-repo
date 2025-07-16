@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Lado a lado */
+.side-by-side {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.side-by-side.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-block {
+  flex: 1 1 50%;
+}
+
+.text-block h2 {
+  color: #a32924;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+.text-block p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.image-block {
+  flex: 1 1 50%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Texto centralizado */
+.centered-text {
+  text-align: center;
+  color: #a32924;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0 20px;
+  line-height: 1.4;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .side-by-side,
+  .side-by-side.reverse {
+    flex-direction: column;
+  }
+
+  .text-block,
+  .image-block {
+    flex-basis: 100%;
+  }
+
+  .image-block {
+    max-height: 250px;
+  }
+
+  .centered-text {
+    font-size: 1.2rem;
+  }
+}
+.botao-voltar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-voltar {
+  padding: 12px 30px;
+  background-color: #a32924;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #a32924;
+}
+
