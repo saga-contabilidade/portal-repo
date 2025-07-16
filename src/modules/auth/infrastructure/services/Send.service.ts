@@ -8,7 +8,7 @@ export interface IMailService {
     ): Promise <void>; 
 }
 
-export class MailtrapCloentService implements IMailService{
+export class MailtrapClientService implements IMailService{
     private client: MailtrapClient;
     private readonly fromEmail = process.env.EMAIL_FROM!;
     private readonly domainLink = process.env.DOMAIN_LINK_URL;
@@ -17,7 +17,6 @@ export class MailtrapCloentService implements IMailService{
 
     constructor(){
         const token = process.env.MAILTRAP_API_KEY;
-
         if(!token) {
             throw new Error("A API do Mailtrap (MAIL_API_KEY) não está configurada.");
         }
@@ -39,8 +38,9 @@ export class MailtrapCloentService implements IMailService{
                     "pass_reset_link": resetLink
                 },
             });
+
         } catch (error) {
-            console.error("Erro ao enviar e-mail de redefinição de senha:", error);
+
             throw new Error("Não foi possível enviar o e-mail de redefinição de senha.");
         }
     }

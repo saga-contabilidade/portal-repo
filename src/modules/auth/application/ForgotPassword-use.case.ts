@@ -1,32 +1,37 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaPasswordResetTokenRepository } from '@/modules/auth/infrastructure/data/Prisma-passwordResetToken.repository';
-import { MailtrapCloentService } from '@/modules/auth/infrastructure/services/Send.service';
+import { MailtrapClientService } from '@/modules/auth/infrastructure/services/Send.service';
 import { randomUUID } from 'crypto';
+import { UserNotFoundError } from './errors/UserNotFoundError';
 
 export class ForgotPasswordUseCase {
     private prisma: PrismaClient;
     private tokenRepo: PrismaPasswordResetTokenRepository;
-    private mailService: MailtrapCloentService;
+    private mailService: MailtrapClientService;
 
     constructor() {
         this.prisma = new PrismaClient();
         this.tokenRepo = new PrismaPasswordResetTokenRepository();
-        this.mailService = new MailtrapCloentService();
+        this.mailService = new MailtrapClientService();
     }
 
     async execute(email: string): Promise<void> {
-
         const user = await this.prisma.user.findUnique({ where: { email } });
         if (!user) {
-
-            return;
+            throw new UserNotFoundError();
         }
 
         const token = randomUUID();
-        const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
+        const expiresAt = new Date(Date.now() + 60 * 60 * 1000); 
 
         await this.tokenRepo.create(user.id, token, expiresAt);
 
-        await this.mailService.sendPasswordResetEmail(user.email, user.name, token);
+        try {
+            await this.mailService.sendPasswordResetEmail(user.email, user.name, token);
+        
+        } catch (error) {
+            console.error('--- ERRO AO ENVIAR E-MAIL ---');
+            console.error(error);
+        }
     }
-} 
+}
