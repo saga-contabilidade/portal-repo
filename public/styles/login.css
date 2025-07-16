@@ -44,7 +44,7 @@ body {
 .logo-topo img {
   max-width: 250px; 
   position: absolute;
-  top: 75px;
+  top: 200px;
   transform: translateX(-50%); 
   width: 100%;
   height: auto;
@@ -221,5 +221,32 @@ footer {
 
   .login-box {
     padding: 30px 25px;
+  }
+}
+
+.btn-voltar-inicio {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 8px 8px 8px 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-voltar-inicio:hover {
+  background: rgba(255,255,255,0.08);
+}
+@media (max-width: 600px) {
+  .btn-voltar-inicio {
+    top: 10px;
+    left: 10px;
+    padding: 6px 6px 6px 2px;
   }
 }
