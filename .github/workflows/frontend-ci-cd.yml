@@ -1,0 +1,68 @@
+name: Frontend CI/CD - Deploy 
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - public/**
+  
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./public
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: ./package-lock.json
+      
+      - name: Instalar Dependências
+        run: npm ci
+          
+      - name: Rodar Linters (Q.A)
+        run: npm run lint
+      
+      - name: Rodar Testes Unitários
+        run: npm test
+
+      - name: Configurar gh pages
+        uses: actions/configure-pages@v5
+
+      - name: Fazer upload do artefato
+        uses: actions/upload-pages-artifact@v3
+
+        with:
+          path: './public'
+
+  deploy:
+    needs: test-and-build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: gh-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Gh Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
