@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             console.log(`[DEBUG] 5. Resposta da API recebida. Status: ${response.status}`);
 
-            // Vamos ler a resposta como texto primeiro para garantir que não está vazia
             const responseText = await response.text();
             console.log(`[DEBUG] 6. Corpo da resposta como texto: "${responseText}"`);
 
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = JSON.parse(responseText);
             console.log('[DEBUG] 7. JSON.parse funcionou. Dados:', data);
 
-            // Esta verificação agora é redundante se o backend sempre retorna 200, mas vamos manter por segurança.
             if (!response.ok) {
                 console.log('[DEBUG] 8. Resposta NÃO foi OK. Lançando erro.');
                 throw new Error(data.error || 'Erro na resposta da API.');
