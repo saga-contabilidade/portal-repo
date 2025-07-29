@@ -70,7 +70,8 @@ form.addEventListener('submit', async (event) => {
       localStorage.setItem('authToken', data.token);
     }
 
-    window.location.href = 'templates/pagina_em_construcao.html';
+    const url = '../news-screen/noticias.html';
+    window.location.href = url;
 
   } catch (error) {
     console.error('Erro ao tentar fazer login:', error);
