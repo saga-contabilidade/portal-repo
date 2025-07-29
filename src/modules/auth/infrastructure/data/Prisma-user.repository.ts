@@ -1,11 +1,15 @@
 import { PrismaClient } from "@prisma/client";
 import { User } from '@prisma/client';
 
-const prisma = new PrismaClient();
-
 export class PrismaUserRepository {
+    private prisma: PrismaClient;
+
+    constructor(prisma: PrismaClient) {
+        this.prisma = prisma;
+    }
+
     async findByEmail(email: string): Promise<User | null >{
-        return prisma.user.findUnique({
+        return this.prisma.user.findUnique({
             where: { email }
         });
     }
