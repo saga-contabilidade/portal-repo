@@ -1,0 +1,405 @@
+/* ===== ESTILOS GLOBAIS SAGAHUB ===== */
+
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    background: #f7f9fb;
+    color: #222;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+/* ===== CABEÇALHO PRINCIPAL ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    color: #8B1E1E;
+    letter-spacing: normal !important;
+}
+
+/* Container centralizado para header e conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cabecalho-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+.conteudo-navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-principal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+    color: #8B1E1E;
+    text-decoration: none;
+}
+
+.logo-principal img {
+    height: 32px;
+    width: auto;
+}
+
+/* Logo SagaHub: cor vermelha SEMPRE */
+.logo-principal span {
+    color: #8B1E1E !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: normal;
+    line-height: 1.2;
+}
+
+/* Menu de navegação */
+.menu-navegacao {
+    display: flex;
+    gap: 16px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-navegacao a.ativo,
+.menu-navegacao a:hover {
+    background: #8B1E1E;
+    color: #fff;
+}
+
+.menu-navegacao a.ativo svg,
+.menu-navegacao a:hover svg {
+    stroke: #fff;
+}
+
+.menu-navegacao a svg {
+    stroke: #8B1E1E;
+    transition: stroke 0.2s;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+/* Área direita do cabeçalho */
+.area-direita-navbar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+/* Notificações */
+.area-notificacoes {
+    position: relative;
+    cursor: pointer;
+}
+
+.icone-sino::before {
+    content: '\1F514';
+    font-size: 20px;
+    color: #a32924;
+}
+
+.ponto-notificacao {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #8B1E1E;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* Perfil do usuário */
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fbeaea;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.icone-perfil {
+    width: 32px;
+    height: 32px;
+    background: #8B1E1E;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.informacoes-perfil {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+}
+
+.nome-perfil {
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+    color: #222;
+}
+
+.cargo-perfil {
+    font-size: 0.8rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    letter-spacing: normal !important;
+    color: #888;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.main-content {
+    min-height: calc(100vh - 80px);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* Espaçamento adicional entre header e conteúdo */
+.main-content .container {
+    padding-top: 50px;
+}
+
+.conteudo-principal {
+    padding: 32px 0;
+}
+
+/* ===== TÍTULOS CONSISTENTES ===== */
+.titulo-pagina {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 8px 0;
+}
+
+.subtitulo-pagina {
+    color: #888;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ===== BOTÕES PADRÃO ===== */
+.botao-primario {
+    background: #8B1E1E;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 30, 30, 0.25);
+    text-decoration: none;
+}
+
+.botao-primario:hover {
+    background: #6B1815;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 30, 30, 0.3);
+}
+
+.botao-secundario {
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao-secundario:hover {
+    background: #e0e0e0;
+}
+
+/* ===== CARDS PADRÃO ===== */
+.card-padrao {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape-principal {
+    background: #222;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.conteudo-rodape {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.secao-rodape h3 {
+    color: #fff;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.secao-rodape p,
+.secao-rodape a {
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.secao-rodape a:hover {
+    color: #8B1E1E;
+}
+
+/* ===== RESPONSIVIDADE GLOBAL ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .menu-navegacao {
+        gap: 8px;
+    }
+    
+    .menu-navegacao a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .conteudo-principal {
+        padding: 16px 0;
+    }
+    
+    .titulo-pagina {
+        font-size: 1.5rem;
+    }
+    
+    .conteudo-rodape {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .area-direita-navbar {
+        gap: 16px;
+    }
+    
+    .perfil-usuario {
+        padding: 2px 8px;
+    }
+    
+    .informacoes-perfil {
+        display: none;
+    }
+}
+
+/* ===== UTILITÁRIOS GLOBAIS ===== */
+.texto-centralizado {
+    text-align: center;
+}
+
+.margem-superior {
+    margin-top: 24px;
+}
+
+.margem-inferior {
+    margin-bottom: 24px;
+}
+
+.esconder-mobile {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .esconder-mobile {
+        display: none;
+    }
+} 
