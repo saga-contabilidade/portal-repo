@@ -1,134 +1,4 @@
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #fff;
-    margin: 0;
-    color: #222;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 0 32px;
-    height: 64px;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #a32924;
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 16px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.nav-menu a.active, .nav-menu a:hover {
-    background: #a32924;
-    color: #fff;
-}
-
-.nav-menu a.active svg, .nav-menu a:hover svg {
-    stroke: #fff;
-}
-
-.nav-menu a svg {
-    stroke: #a32924;
-    transition: stroke 0.2s;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.notifications {
-    position: relative;
-}
-
-.icon-bell::before {
-    content: '\1F514';
-    font-size: 20px;
-    color: #a32924;
-}
-
-.notification-dot {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px;
-    height: 8px;
-    background: #ff4d4f;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #fbeaea;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-
-.profile-icon {
-    width: 32px;
-    height: 32px;
-    background: #a32924;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 4px;
-    vertical-align: middle;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.95rem;
-}
-
-.profile-name {
-    font-weight: 600;
-}
-
-.profile-role {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* Remover .hub-container e ajustes de centralização */
-
-main {
-    max-width: 1200px;
-    margin: 32px auto;
-    padding: 0 16px;
-}
+/* ===== ESTILOS ESPECÍFICOS DO HUB ===== */
 
 .welcome-section {
     background: #fff;
@@ -433,22 +303,8 @@ main {
     text-decoration: underline;
 }
 
-/* Container interno para centralizar os elementos da navbar */
-.navbar-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 /* Alinhar o h1 da welcome-info ao container centralizado */
 .welcome-info {
-    max-width: 1200px;
-    margin: 0 auto 24px auto;
-    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1180,4 +1036,23 @@ main {
     width: 100%;
     margin-bottom: 8px;
   }
-} 
+}
+
+.new-task-btn {
+  background: #a32924;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+.new-task-btn:hover {
+  background: #7d1e1a;
+}
