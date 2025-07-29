@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setMensagem('', '');
         const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Regex mais abrangente para validação de e-mails (ainda não cobre 100% do RFC, mas é mais robusto)
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
         if (!emailRegex.test(email)) {
             console.log('[DEBUG] Validação de e-mail falhou.');

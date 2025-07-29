@@ -18,11 +18,28 @@
                 <span>SagaHub</span>
             </div>
             <nav class="nav-menu">
-                <a href="#" class="active">Notícias</a>
-                <a href="#">Fiscal Interno</a>
-                <a href="#">Kanban</a>
-                <a href="#">Chamados</a>
-                <a href="#">Chat Interno</a>
+                <a href="hub.html" class="active">
+                  <!-- Ícone de jornal/documento para Notícias -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h6" stroke-width="2" stroke-linecap="round"/></svg>
+                  Notícias
+                </a>
+                <a href="fiscal.html">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="2"/><path d="M7 8h10M7 12h10M7 16h4" stroke-width="2" stroke-linecap="round"/></svg>
+                  Fiscal Interno
+                </a>
+                <a href="#">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke-width="2"/></svg>
+                  Kanban
+                </a>
+                <a href="#">
+                  <!-- Ícone de headset para Chamados -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="15" width="4" height="6" rx="2" stroke-width="2"/><rect x="18" y="15" width="4" height="6" rx="2" stroke-width="2"/></svg>
+                  Chamados
+                </a>
+                <a href="#">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:6px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Chat Interno
+                </a>
             </nav>
             <div class="navbar-right">
                 <div class="notifications">
@@ -40,72 +57,24 @@
         </div>
     </header>
     <main>
-        <section class="welcome-section">
+        <section class="hub-card" style="background:#fff;border-radius:16px;box-shadow:0 2px 8px rgba(44,62,80,0.04);padding:32px;margin-bottom:32px;">
             <div class="welcome-header">
-                <div class="welcome-logo">
-                    <img src="/public//assets/img/logo-cubo.png" alt="NewsHub Logo" style="width: 24px; height: 24px; filter: drop-shadow(0 2px 6px rgba(163,41,36,0.25));">
-                    <span>SagaHub</span>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Pesquisar notícias...">
-                </div>
-                <div class="user-greeting">
-                    <span class="profile-icon"></span>
-                    <div>
-                        <span>Olá, João Silva!</span>
-                        <span class="welcome-back">Bem-vindo de volta</span>
-                    </div>
-                </div>
             </div>
             <div class="welcome-info">
-                <h1>Bom dia, João Silva!</h1>
-                <div class="date-time">
-                    <span class="icon-calendar"></span>
-                    <span>terça-feira, 15 de julho de 2025</span>
-                </div>
-                <div class="last-update">
-                    <span>Última atualização</span>
-                    <span>11:53</span>
-                </div>
-            </div>
-            <div class="metrics-cards">
-                <div class="metric-card">
-                    <span class="metric-title">Notícias Hoje</span>
-                    <span class="metric-value">24</span>
-                    <span class="metric-sub">+12% desde ontem</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-title">Atualizações</span>
-                    <span class="metric-value">8</span>
-                    <span class="metric-sub metric-positive">+5 desde ontem</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-title">Eventos</span>
-                    <span class="metric-value">3</span>
-                    <span class="metric-sub metric-today">Hoje desde ontem</span>
+                <div class="welcome-row" style="display:flex;justify-content:space-between;align-items:flex-start;width:100%;">
+                  <div style="display:flex;flex-direction:column;align-items:flex-start;">
+                    <h1 style="margin:0;">Bom dia, João Silva!</h1>
+                    <p class="news-subtitle" style="margin: 4px 0 0 0;">Fique por dentro das últimas novidades!</p>
+                  </div>
+                  <div id="relogio-iphone" style="text-align: right;">
+                    <div id="relogio-data" style="font-size:1rem;font-weight:400;color:#888;"></div>
+                    <div id="relogio-hora" style="font-size:2rem;font-weight:700;letter-spacing:2px;color:#111;text-shadow:0 2px 12px rgba(0,0,0,0.08);"></div>
+                  </div>
                 </div>
             </div>
-        </section>
-        <section class="news-portal">
-            <div class="news-header">
-                <h2>Portal de Notícias</h2>
-                <span class="trending">Em alta agora</span>
-            </div>
-            <p class="news-subtitle">Fique por dentro das últimas novidades</p>
-            <div class="news-filters">
-                <button class="filter active">Todas</button>
-                <button class="filter">Tecnologia</button>
-                <button class="filter">Meio Ambiente</button>
-                <button class="filter">Saúde</button>
-                <button class="filter">Economia</button>
-                <button class="filter">Educação</button>
-                <button class="filter">Esportes</button>
-            </div>
-            <div class="news-cards">
+            <div class="news-cards" style="margin-top: 32px;">
                 <div class="news-card">
                     <div class="news-image urgent">
-                        <span class="urgent-label">URGENTE</span>
-                        <span class="category-label">Tecnologia</span>
                         <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="IA">
                     </div>
                     <div class="news-content">
@@ -126,7 +95,6 @@
                 </div>
                 <div class="news-card">
                     <div class="news-image">
-                        <span class="category-label">Meio Ambiente</span>
                         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Meio Ambiente">
                     </div>
                     <div class="news-content">
@@ -147,7 +115,6 @@
                 </div>
                 <div class="news-card">
                     <div class="news-image">
-                        <span class="category-label">Saúde</span>
                         <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Saúde Digital">
                     </div>
                     <div class="news-content">
@@ -169,5 +136,38 @@
             </div>
         </section>
     </main>
+<script>
+function atualizarRelogioHub() {
+  const agora = new Date();
+  const opcoesData = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+  const dataFormatada = agora.toLocaleDateString('pt-BR', opcoesData);
+  const hora = agora.getHours().toString().padStart(2, '0');
+  const min = agora.getMinutes().toString().padStart(2, '0');
+  const seg = agora.getSeconds().toString().padStart(2, '0');
+  document.getElementById('relogio-hub').innerHTML = `${hora}:${min}:${seg} — ${dataFormatada}`;
+}
+setInterval(atualizarRelogioHub, 1000);
+atualizarRelogioHub();
+</script>
+<script>
+function atualizarRelogioIphone() {
+  const agora = new Date();
+  const opcoesData = { weekday: 'long', day: '2-digit', month: 'long' };
+  const dataFormatada = agora.toLocaleDateString('pt-BR', opcoesData);
+  const hora = agora.getHours().toString().padStart(2, '0');
+  const min = agora.getMinutes().toString().padStart(2, '0');
+  const seg = agora.getSeconds().toString().padStart(2, '0');
+  document.getElementById('relogio-data').innerHTML = dataFormatada.charAt(0).toUpperCase() + dataFormatada.slice(1);
+  document.getElementById('relogio-hora').innerHTML = `${hora}:${min}:${seg}`;
+}
+setInterval(atualizarRelogioIphone, 1000);
+atualizarRelogioIphone();
+</script>
+    <footer class="footer-hub-columns" style="position: fixed; left: 0; right: 0; bottom: 0; width: 100vw; background: #fff; border-top: 1px solid #ececec; z-index: 100;">
+      <div class="footer-hub-columns-bottom" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+        <span style="color: #888;">© 2025 SagaHub. Todos os direitos reservados.</span>
+        <span><span style="color: #a32924; font-weight: 600;">Powered by</span><span style="color: #888; font-weight: 400;"> Augusto Pisa e Miguel Castellani</span></span>
+      </div>
+    </footer>
 </body>
 </html> 

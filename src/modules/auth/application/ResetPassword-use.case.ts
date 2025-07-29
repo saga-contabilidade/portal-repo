@@ -6,8 +6,8 @@ export class ResetPasswordUseCase {
     private prisma: PrismaClient;
     private tokenRepo: PrismaPasswordResetTokenRepository;
 
-    constructor() {
-        this.prisma = new PrismaClient();
+    constructor(prisma: PrismaClient) {
+        this.prisma = prisma;
         this.tokenRepo = new PrismaPasswordResetTokenRepository();
     }
 
