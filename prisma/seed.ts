@@ -10,6 +10,7 @@ const hashPassword = (password: string) => {
 async function main() {
   console.log('Iniciando o seeding com o schema de Enums...');
 
+  await prisma.passwordResetToken.deleteMany();
   await prisma.user.deleteMany();
   await prisma.cliente.deleteMany();
   console.log('Tabelas limpas.');
@@ -30,8 +31,8 @@ async function main() {
   const userPassword = await hashPassword('usuario123');
   await prisma.user.create({
     data: {
-      name: 'Usuário Comum',
-      email: 'usuario@saga.cnt.br',
+      name: 'Cesar Pisa',
+      email: 'cesar.au563@gmail.com',
       passwordHash: userPassword,
       profile: ProfileType.COLABORADOR,
       sector: Sector.RH,
