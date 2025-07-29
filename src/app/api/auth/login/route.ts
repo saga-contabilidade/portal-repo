@@ -2,10 +2,11 @@ import { NextResponse } from 'next/server';
 import { LoginUseCase } from '@/modules/auth/application/Login-use.case';
 import { PrismaUserRepository } from '@/modules/auth/infrastructure/data/Prisma-user.repository';
 import { JwtService } from '@/modules/auth/infrastructure/services/Jwt.service';
+import prisma from '@/modules/auth/infrastructure/data/prisma-client';
 
 
 export async function POST(req: Request){
-    const userRepository = new PrismaUserRepository();
+    const userRepository = new PrismaUserRepository(prisma);
     const authService = new JwtService();
     const loginUserCase = new LoginUseCase(userRepository, authService);
 
