@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esqueci a Senha - SagaHub</title>
+  <link rel="stylesheet" href="/public/styles/login-screen/esqueceu-senha.css" />
+  <link rel="icon" href="/public/assets/img/favicon.png" type="image/png" />
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo" class="logo" />
+
+      <h1>Esqueceu sua senha?</h1>
+      <p>Digite seu e-mail abaixo para redefinir sua senha</p>
+
+      <form id="forgot-form">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seuemail@email.com" />
+
+        <button type="submit">Enviar link de recuperação</button>
+        <p id="mensagem-sucesso"></p>
+      </form>
+      <div class="voltar-login">
+        <a href="/public/templates/home-screen/inicio.html">← Voltar ao login</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="/public/scripts/esqueceu_senha.js" defer></script>
+</html>

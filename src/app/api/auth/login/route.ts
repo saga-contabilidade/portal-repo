@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { LoginUseCase } from '@/modules/auth/application/Login-use.case';
-import { PrismaUserRepository } from '@/modules/auth/infrastructure/Prisma-user.repository';
-import { JwtService } from '@/modules/auth/infrastructure/Jwt.service';
+import { PrismaUserRepository } from '@/modules/auth/infrastructure/data/Prisma-user.repository';
+import { JwtService } from '@/modules/auth/infrastructure/services/Jwt.service';
 
 
 export async function POST(req: Request){
