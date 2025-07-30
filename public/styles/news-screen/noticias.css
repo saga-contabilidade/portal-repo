@@ -1,125 +1,4 @@
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #fff;
-    margin: 0;
-    color: #222;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 0 32px;
-    height: 64px;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #a32924;
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 16px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.nav-menu a.active, .nav-menu a:hover {
-    background: #a32924;
-    color: #fff;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.notifications {
-    position: relative;
-}
-
-.icon-bell::before {
-    content: '\1F514';
-    font-size: 20px;
-    color: #a32924;
-}
-
-.notification-dot {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px;
-    height: 8px;
-    background: #ff4d4f;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #fbeaea;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-
-.profile-icon {
-    width: 32px;
-    height: 32px;
-    background: #a32924;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 4px;
-    vertical-align: middle;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.95rem;
-}
-
-.profile-name {
-    font-weight: 600;
-}
-
-.profile-role {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* Remover .hub-container e ajustes de centralização */
-
-main {
-    max-width: 1200px;
-    margin: 32px auto;
-    padding: 0 16px;
-}
+/* ===== ESTILOS ESPECÍFICOS DO HUB ===== */
 
 .welcome-section {
     background: #fff;
@@ -424,25 +303,62 @@ main {
     text-decoration: underline;
 }
 
-/* Container interno para centralizar os elementos da navbar */
-.navbar-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 /* Alinhar o h1 da welcome-info ao container centralizado */
 .welcome-info {
-    max-width: 1200px;
-    margin: 0 auto 24px auto;
-    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Rodapé SagaHub */
+.footer-hub {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ececec;
+    color: #222;
+    font-size: 1rem;
+    margin-top: 48px;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer-right a {
+    color: #a32924;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 4px;
+    transition: text-decoration 0.2s;
+}
+.footer-right a:hover {
+    text-decoration: underline;
+}
+.footer-sep {
+    color: #ccc;
+    margin: 0 2px;
+}
+@media (max-width: 700px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 8px;
+        gap: 6px;
+    }
+    .footer-left, .footer-center, .footer-right {
+        font-size: 0.98rem;
+        gap: 4px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -476,4 +392,667 @@ main {
     main {
         padding: 0 8px !important;
     }
+}
+
+/* Rodapé moderno SagaHub */
+.footer-hub-modern {
+  background: #fff;
+  color: #222;
+  font-size: 1rem;
+  margin-top: 48px;
+  border-top: 1px solid #ececec;
+  width: 100%;
+}
+.footer-hub-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 24px 32px;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-col {
+  flex: 1 1 180px;
+  min-width: 180px;
+  margin-bottom: 16px;
+}
+.footer-col h4 {
+  color: #a32924;
+  font-size: 1.08rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #a32924;
+  margin-bottom: 8px;
+}
+.footer-desc {
+  color: #555;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-col ul li a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover {
+  color: #a32924;
+  text-decoration: underline;
+}
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.newsletter-form input[type="email"] {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  flex: 1;
+  background: #f7f9fb;
+}
+.newsletter-form button {
+  background: #a32924;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter-form button:hover {
+  background: #7d1e1a;
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+.footer-social a svg {
+  vertical-align: middle;
+  stroke: #a32924;
+  fill: none;
+  transition: stroke 0.2s, fill 0.2s;
+}
+.footer-social a:hover svg {
+  stroke: #7d1e1a;
+  fill: #fbeaea;
+}
+.footer-divider {
+  border: none;
+  border-top: 1px solid #ececec;
+  margin: 0 0 0 0;
+}
+.footer-hub-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  color: #888;
+  font-size: 0.98rem;
+  justify-content: space-between;
+}
+.footer-hub-bottom span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 900px) {
+  .footer-hub-top {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 12px 18px 12px;
+  }
+  .footer-hub-bottom {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+    align-items: flex-start;
+  }
+  .footer-col {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* Remover estilos da newsletter do rodapé */
+.footer-col.newsletter, .newsletter-form {
+  display: none !important;
+}
+.footer-col.footer-social-col {
+  min-width: 180px;
+}
+@media (max-width: 900px) {
+  .footer-col.footer-social-col {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* Rodapé minimalista fixo no fundo */
+.footer-hub-modern {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: #fff;
+  color: #888;
+  font-size: 1rem;
+  border-top: 1px solid #ececec;
+  z-index: 100;
+}
+.footer-hub-bottom {
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+main {
+  padding-bottom: 60px !important;
+}
+
+/* Rodapé discreto SagaHub */
+.footer-hub-discreto {
+  background: #a32924;
+  color: #fff;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #ececec;
+  font-size: 1rem;
+}
+.footer-hub-discreto-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 0 0;
+}
+.footer-hub-discreto-logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.footer-hub-discreto-links {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 2px;
+}
+.footer-hub-discreto-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.footer-hub-discreto-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.footer-hub-discreto-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.footer-hub-discreto-social a svg {
+  stroke: #fff;
+  fill: none;
+  width: 18px;
+  height: 18px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.footer-hub-discreto-social a:hover svg {
+  opacity: 1;
+}
+.footer-hub-discreto-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+  opacity: 0.85;
+  padding: 4px 0 10px 0;
+}
+@media (max-width: 700px) {
+  .footer-hub-discreto-content {
+    gap: 6px;
+    padding: 10px 0 0 0;
+  }
+  .footer-hub-discreto-links {
+    gap: 10px;
+  }
+  .footer-hub-discreto-bottom {
+    font-size: 0.92rem;
+    flex-direction: column;
+    gap: 2px;
+    padding: 2px 0 8px 0;
+  }
+}
+
+/* Rodapé discreto e elegante SagaHub */
+.footer-hub-elegante {
+  background: #fff;
+  color: #888;
+  width: 100vw;
+  border-top: 1px solid #ececec;
+  font-size: 0.98rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-hub-elegante-content {
+  text-align: center;
+  padding: 12px 8px 10px 8px;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 700px) {
+  .footer-hub-elegante-content {
+    font-size: 0.93rem;
+    padding: 10px 4px 8px 4px;
+  }
+}
+
+/* Rodapé criativo e elegante SagaHub */
+.footer-hub-criativo {
+  position: relative;
+  width: 100vw;
+  background: linear-gradient(90deg, #f7f7fa 0%, #f0f0f5 100%);
+  color: #444;
+  font-size: 1.05rem;
+  box-shadow: 0 -2px 16px 0 rgba(44,62,80,0.06);
+  border-top: 1px solid #ececec;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+.footer-hub-criativo-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0, #fbeaea 0%, transparent 70%);
+  opacity: 0.25;
+  z-index: 1;
+}
+.footer-hub-criativo-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 8px 18px 8px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.footer-hub-criativo-powered {
+  color: #a32924;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.footer-hub-criativo-sep {
+  color: #bbb;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+.footer-hub-criativo-copy {
+  color: #888;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .footer-hub-criativo-content {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.97rem;
+    padding: 14px 4px 12px 4px;
+  }
+  .footer-hub-criativo-sep {
+    display: none;
+  }
+}
+
+/* Rodapé elegante e moderno SagaHub */
+.footer-hub-art {
+  background: #fff;
+  color: #444;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-size: 1.04rem;
+  font-family: 'Inter', Arial, sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.footer-hub-art-line {
+  width: 100vw;
+  height: 3px;
+  background: #a32924;
+  opacity: 1;
+  margin-bottom: 0.5rem;
+}
+.footer-hub-art-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 4px 3px 4px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.footer-hub-art-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+.footer-hub-art-powered {
+  color: #a32924;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.footer-hub-art-sep {
+  color: #bbb;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+.footer-hub-art-copy {
+  color: #888;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .footer-hub-art-content {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.97rem;
+    padding: 8px 4px 10px 4px;
+  }
+  .footer-hub-art-sep {
+    display: none;
+  }
+  .footer-hub-art-line {
+    height: 2px;
+    margin-bottom: 0.3rem;
+  }
 } 
+
+/* Rodapé escuro e elegante SagaHub */
+.footer-hub-dark {
+  background: #222;
+  color: #f4f4f4;
+  width: 100vw;
+  border-top: 1px solid #a32924;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-hub-dark-content {
+  text-align: center;
+  padding: 14px 8px 12px 8px;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 700px) {
+  .footer-hub-dark-content {
+    font-size: 0.93rem;
+    padding: 10px 4px 8px 4px;
+  }
+} 
+
+/* Rodapé inspirado na imagem enviada */
+.footer-hub-img {
+  background: #222;
+  color: #f4f4f4;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #a32924;
+  font-size: 1rem;
+}
+.footer-hub-img-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 0 0 0;
+}
+.footer-hub-img-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.footer-hub-img-links {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 6px;
+}
+.footer-hub-img-links a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.footer-hub-img-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.footer-hub-img-social {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.footer-hub-img-social a svg {
+  stroke: #fff;
+  fill: none;
+  width: 18px;
+  height: 18px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.footer-hub-img-social a:hover svg {
+  opacity: 1;
+}
+.footer-hub-img-bottom {
+  color: #bbb;
+  font-size: 0.97rem;
+  text-align: center;
+  margin: 24px 0 8px 0;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 700px) {
+  .footer-hub-img-content {
+    gap: 8px;
+    padding: 20px 0 0 0;
+  }
+  .footer-hub-img-links {
+    gap: 10px;
+    font-size: 0.97rem;
+  }
+  .footer-hub-img-bottom {
+    font-size: 0.92rem;
+    margin: 14px 0 6px 0;
+  }
+} 
+
+/* Rodapé inspirado na imagem enviada (colunas) */
+.footer-hub-columns {
+  background: #fff;
+  color: #444;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ececec;
+  font-size: 1rem;
+}
+.footer-hub-columns-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 32px 18px 32px;
+  flex-wrap: wrap;
+}
+.footer-hub-col {
+  flex: 1 1 180px;
+  min-width: 160px;
+  margin-bottom: 16px;
+}
+.footer-hub-col h4 {
+  color: #a32924;
+  font-size: 1.08rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.footer-hub-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-hub-col ul li a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.98rem;
+}
+.footer-hub-col ul li a:hover {
+  color: #a32924;
+  text-decoration: underline;
+}
+.footer-hub-col.subscribe p {
+  color: #888;
+  font-size: 0.97rem;
+  margin-bottom: 10px;
+}
+.footer-hub-subscribe {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.footer-hub-subscribe input[type="email"] {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  flex: 1;
+  background: #f7f9fb;
+}
+.footer-hub-subscribe button {
+  background: #a32924;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.footer-hub-subscribe button:hover {
+  background: #7d1e1a;
+}
+.footer-hub-columns-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px 8px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ececec;
+  color: #888;
+  font-size: 0.97rem;
+  flex-wrap: wrap;
+}
+.footer-hub-columns-copy {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-hub-columns-social {
+  display: flex;
+  gap: 16px;
+  min-width: 120px;
+  justify-content: flex-end;
+}
+.footer-hub-columns-social a svg {
+  stroke: #bbb;
+  fill: none;
+  width: 18px;
+  height: 18px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.footer-hub-columns-social a:hover svg {
+  opacity: 1;
+  stroke: #a32924;
+}
+@media (max-width: 900px) {
+  .footer-hub-columns-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 12px 10px 12px;
+  }
+  .footer-hub-columns-bottom {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px 6px 8px;
+    align-items: flex-start;
+  }
+  .footer-hub-col {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.new-task-btn {
+  background: #a32924;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+.new-task-btn:hover {
+  background: #7d1e1a;
+}

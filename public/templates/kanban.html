@@ -1,0 +1,269 @@
+          <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban - SagaHub</title>
+    <link rel="stylesheet" href="/public/styles/global.css">
+    <link rel="stylesheet" href="/public/styles/kanban.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="cabecalho-principal">
+            <a href="hub.html" class="logo-principal">
+                <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo">
+                <span>SagaHub</span>
+            </a>
+            <nav class="menu-navegacao">
+                <a href="hub.html">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M7 8h10M7 12h6M7 16h6" stroke-linecap="round"/>
+                  </svg>
+                  Notícias
+                </a>
+                <a href="fiscal.html">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/>
+                    <path d="M7 8h10M7 12h10M7 16h4" stroke-linecap="round"/>
+                  </svg>
+                  Fiscal
+                </a>
+                <a href="kanban.html" class="ativo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                  </svg>
+                  Kanban
+                </a>
+                <a href="#">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="2" y="15" width="4" height="6" rx="2"/>
+                    <rect x="18" y="15" width="4" height="6" rx="2"/>
+                  </svg>
+                  Chamados
+                </a>
+                <a href="#">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Chat Interno
+                </a>
+            </nav>
+            <div class="area-direita-navbar">
+                <div class="area-notificacoes">
+                    <span class="icone-sino"></span>
+                    <span class="ponto-notificacao"></span>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="icone-perfil"></span>
+                    <div class="informacoes-perfil">
+                        <span class="nome-perfil">João Silva</span>
+                        <span class="cargo-perfil">Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+        <div class="card-padrao">
+            <div class="kanban-header">
+                <div class="kanban-title-section">
+                    <h1 class="titulo-pagina">Kanban Tasks </h1>
+                    <p class="subtitulo-pagina">Gerencie suas tarefas de forma visual e eficiente</p>
+                </div>
+                <button class="botao-primario" onclick="openNewTaskModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Nova Tarefa
+                </button>
+            </div>
+        </div>
+
+        <div class="kanban-board">
+            <!-- Coluna 1: A Fazer -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h3>A Fazer</h3>
+                    <span class="task-count">3</span>
+                </div>
+                <div class="column-content" id="todo-column">
+                    <div class="task-card" draggable="true" data-status="todo">
+                        <div class="task-priority high"></div>
+                        <h4>Implementar Sistema de Login</h4>
+                        <p>Criar autenticação segura com JWT e validação de dados</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Prazo: 15/01/2025</span>
+                            <span class="task-assignee">João Silva</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Backend</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card" draggable="true" data-status="todo">
+                        <div class="task-priority medium"></div>
+                        <h4>Design do Dashboard</h4>
+                        <p>Criar interface moderna e responsiva para o painel principal</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Prazo: 20/01/2025</span>
+                            <span class="task-assignee">Maria Santos</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card" draggable="true" data-status="todo">
+                        <div class="task-priority low"></div>
+                        <h4>Configurar Banco de Dados</h4>
+                        <p>Implementar schema e migrações do banco PostgreSQL</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Prazo: 18/01/2025</span>
+                            <span class="task-assignee">Carlos Lima</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">Database</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Em Andamento -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h3>Em Andamento</h3>
+                    <span class="task-count">2</span>
+                </div>
+                <div class="column-content" id="in-progress-column">
+                    <div class="task-card" draggable="true" data-status="in-progress">
+                        <div class="task-priority high"></div>
+                        <h4>API REST</h4>
+                        <p>Desenvolver endpoints para CRUD de usuários e autenticação</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Prazo: 22/01/2025</span>
+                            <span class="task-assignee">Ana Costa</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">API</span>
+                            <span class="tag">Backend</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card" draggable="true" data-status="in-progress">
+                        <div class="task-priority medium"></div>
+                        <h4>Testes Unitários</h4>
+                        <p>Implementar cobertura de testes para módulos principais</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Prazo: 25/01/2025</span>
+                            <span class="task-assignee">Pedro Alves</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Concluído -->
+            <div class="kanban-column">
+                <div class="column-header">
+                    <h3>Concluído</h3>
+                    <span class="task-count">1</span>
+                </div>
+                <div class="column-content" id="done-column">
+                    <div class="task-card completed" draggable="true" data-status="done">
+                        <div class="task-priority low"></div>
+                        <h4>Setup do Projeto</h4>
+                        <p>Configurar ambiente de desenvolvimento e estrutura inicial</p>
+                        <div class="task-meta">
+                            <span class="task-deadline">Concluído: 10/01/2025</span>
+                            <span class="task-assignee">João Silva</span>
+                        </div>
+                        <div class="task-tags">
+                            <span class="tag">Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Modal para Nova Tarefa -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Tarefa</h2>
+                <span class="close" onclick="closeNewTaskModal()">&times;</span>
+            </div>
+            <form id="newTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Título</label>
+                    <input type="text" id="taskTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Descrição</label>
+                    <textarea id="taskDescription" name="description" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridade</label>
+                        <select id="taskPriority" name="priority" required>
+                            <option value="low">Baixa</option>
+                            <option value="medium">Média</option>
+                            <option value="high">Alta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDeadline">Prazo</label>
+                        <input type="date" id="taskDeadline" name="deadline" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taskAssignee">Responsável</label>
+                    <select id="taskAssignee" name="assignee" required>
+                        <option value="João Silva">João Silva</option>
+                        <option value="Maria Santos">Maria Santos</option>
+                        <option value="Carlos Lima">Carlos Lima</option>
+                        <option value="Ana Costa">Ana Costa</option>
+                        <option value="Pedro Alves">Pedro Alves</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskTags">Tags (separadas por vírgula)</label>
+                    <input type="text" id="taskTags" name="tags" placeholder="Frontend, Backend, UI/UX">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" onclick="closeNewTaskModal()" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Criar Tarefa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer-hub-columns" style="position: fixed; left: 0; right: 0; bottom: 0; width: 100vw; background: #fff; border-top: 1px solid #ececec; z-index: 100;">
+    <div class="container">
+        <div class="footer-hub-columns-bottom" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
+        <span style="color: #888;">© 2025 SagaHub. Todos os direitos reservados.</span>
+        <span><span style="color: #a32924; font-weight: 600;">Powered by</span><span style="color: #888; font-weight: 400;"> Augusto Pisa e Miguel Castellani</span></span>
+              </div>
+    </div>
+    </footer>
+
+    <script src="/public/scripts/kanbam.js"></script>
+</body>
+</html>

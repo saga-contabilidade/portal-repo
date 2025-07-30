@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiscal Interno</title>
+    <link rel="stylesheet" href="/public/styles/global.css">
+    <link rel="stylesheet" href="/public/styles/fiscal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="cabecalho-principal">
+            <a href="hub.html" class="logo-principal">
+                <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo">
+                <span>SagaHub</span>
+            </a>
+            <nav class="menu-navegacao">
+                <a href="hub.html">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M7 8h10M7 12h6M7 16h6" stroke-linecap="round"/>
+                  </svg>
+                  Notícias
+                </a>
+                <a href="fiscal.html" class="ativo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/>
+                    <path d="M7 8h10M7 12h10M7 16h4" stroke-linecap="round"/>
+                  </svg>
+                  Fiscal
+                </a>
+                <a href="kanban.html">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                  </svg>
+                  Kanban
+                </a>
+                <a href="#">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="2" y="15" width="4" height="6" rx="2"/>
+                    <rect x="18" y="15" width="4" height="6" rx="2"/>
+                  </svg>
+                  Chamados
+                </a>
+                <a href="#">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Chat Interno
+                </a>
+            </nav>
+            <div class="area-direita-navbar">
+                <div class="area-notificacoes">
+                    <span class="icone-sino"></span>
+                    <span class="ponto-notificacao"></span>
+                </div>
+                <div class="perfil-usuario">
+                    <span class="icone-perfil"></span>
+                    <div class="informacoes-perfil">
+                        <span class="nome-perfil">João Silva</span>
+                        <span class="cargo-perfil">Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+      <div class="fiscal-container">
+        <div class="fiscal-header">
+          <div class="fiscal-header__left">
+            <p>Gerencie documentos fiscais e relatórios</p>
+          </div>
+        </div>
+        <div class="fiscal-cards fiscal-cards--duo" id="fiscal-cards-duo">
+          <div class="fiscal-card-duo-col">
+            <div class="fiscal-card fiscal-card--compact" id="card-relatorios">
+              <div class="fiscal-card__top">
+                <span class="fiscal-card__title">Relatórios Gerados</span>
+              </div>
+              <div class="fiscal-card__value">45</div>
+              <div class="fiscal-card__desc">
+                Último relatório gerado por: <span class="fiscal-card__user">João Silva</span>
+              </div>
+            </div>
+            <div class="fiscal-card fiscal-card--compact fiscal-card--clickable" id="card-das">
+              <div class="fiscal-card__top">
+                <span class="fiscal-card__title">Calculadora DAS</span>
+              </div>
+              <div class="fiscal-card__value"><img src="/public/assets/img/1.png" alt="Calculadora DAS" style="height:40px;"></div>
+              <div class="fiscal-card__desc">
+                Clique para simular a Calculadora DAS
+              </div>
+            </div>
+          </div>
+          <div class="fiscal-card-duo-col fiscal-card-duo-col--center">
+            <div class="fiscal-card fiscal-card--compact" id="card-nfse-importadas">
+              <div class="fiscal-card__top">
+                <span class="fiscal-card__title">NFS-e Importadas</span>
+              </div>
+              <div class="fiscal-card__value">0</div>
+              <div class="fiscal-card__desc">
+                Nenhuma NFS-e importada ainda
+              </div>
+            </div>
+            <div class="fiscal-card fiscal-card--compact fiscal-card--clickable" id="card-xml">
+              <div class="fiscal-card__top">
+                <span class="fiscal-card__title">XML Importer</span>
+              </div>
+              <div class="fiscal-card__value"><img src="/public/assets/img/2.png" alt="XML Importer" style="height:40px;"></div>
+              <div class="fiscal-card__desc">
+                Clique para simular o XML Importer
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="fiscal-tool-simulation" class="fiscal-panel-card" style="display:none;"></div>
+        <div id="fiscal-panel-dev" class="fiscal-panel-dev">
+          <div class="fiscal-panel-dev__header">
+            <span class="fiscal-panel-dev__title">Painel Fiscal</span>
+          </div>
+          <div class="fiscal-panel-dev__subtitle">Monitore e gerencie suas atividades fiscais</div>
+          <div class="fiscal-panel-dev__content">
+            <div class="fiscal-panel-dev__main">Módulo Fiscal em Desenvolvimento</div>
+            <div class="fiscal-panel-dev__desc">Em breve você poderá gerenciar todos os aspectos fiscais aqui.</div>
+          </div>
+        </div>
+              </div>
+        </div>
+    </main>
+    <footer class="footer-hub-columns">
+    <div class="container">
+        <div class="footer-hub-columns-bottom">
+        <span>© 2025 SagaHub. Todos os direitos reservados.</span>
+        <span><span class="footer-hub-powered">Powered by</span><span class="footer-hub-authors"> Augusto Pisa e Miguel Castellani</span></span>
+              </div>
+    </div>
+    </footer>
+</body>
+</html>
+<script src="/public/scripts/fiscal.js"></script>
