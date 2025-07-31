@@ -1,7 +1,7 @@
 name: Frontend CI/CD - Deploy 
 
 on:
-  pull_request:
+  push:
     branches: [ main ]
     paths:
       - public/**
@@ -58,7 +58,7 @@ jobs:
       id-token: write
 
     environment:
-      name: gh-pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
