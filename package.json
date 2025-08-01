@@ -11,16 +11,22 @@
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",
+    "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
+    "cheerio": "^1.1.2",
+    "dompurify": "^3.2.6",
+    "jsdom": "^26.1.0",
     "jsonwebtoken": "^9.0.2",
     "mailtrap": "^4.2.0",
     "ms": "^2.1.3",
     "next": "15.3.5",
     "prisma": "^6.11.1",
+    "puppeteer": "^24.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
