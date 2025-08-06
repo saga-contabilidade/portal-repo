@@ -26,8 +26,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
     align-items: stretch;
+    margin-bottom: 48px;
 }
-
+ 
 /* Colunas do Kanban */
 .kanban-column {
     background: #fff;
