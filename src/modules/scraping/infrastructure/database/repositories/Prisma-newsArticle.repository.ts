@@ -1,21 +1,23 @@
-import { INewsArticleRepository } from "@/modules/scraping/domain/repositories/INewsArticleRepository";
-import { ar } from "zod/locales";
+import { PrismaClient, Prisma, NewsArticle as PrismaNewsArticleModel } from '@prisma/client';
+import { INewsArticleRepository } from '@/modules/scraping/domain/repositories/INewsArticleRepository';
+import { NewsArticle } from '@/modules/scraping/domain/entities/newsArticle';
+import { NewsArticleMapper } from '@/modules/scraping/application/mappers/NewsArticleMapper';
 
 export class PrismaNewsArticleRepository implements INewsArticleRepository{
     constructor(
         private prisma : PrismaClient
     ){}
 
-    async upsert(article: NewsArticleEntity): Promise<void> {
-        await this.prisma.NewsArticle.upsert({
+    async upsert(article: NewsArticle): Promise<void> {
+        await this.prisma.newsArticle.upsert({
             where: { articleUrl: article.articleUrl },
             update: article,
             create: article,
         });
     }
 
-    async findRecentWithSourceDiversity(limit: number): Promise<PrismaNewsArticle[]> {
-        const query = `
+    async findRecentWithSourceDiversity(limit: number): Promise<NewsArticle[]> {
+        const query = Prisma.sql`
             SELECT * FROM (
             SELECT *,
             ROW_NUMBER() OVER (PARTITION BY source ORDER BY publishedAt DESC) as rn
@@ -27,8 +29,9 @@ export class PrismaNewsArticleRepository implements INewsArticleRepository{
               LIMIT ${limit};
               `;
         
-        const articles = await this.prisma.$queryRawUnsafe<PrismaNewsArticle[]>(query);
+        const articlesFromDb = await this.prisma.$queryRaw<PrismaNewsArticleModel[]>(query);
 
-        return articles;
+        return NewsArticleMapper.toDomainArray(articlesFromDb);
+        
     }
 }

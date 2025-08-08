@@ -1,9 +1,8 @@
-import { NewsArticle as NewsArticleEntity } from '@/modules/scraping/domain/entities/newsArticle';
-import { NewsArticle as PrismaNewsArticle } from '@prisma/client';
+import { NewsArticle } from '@/modules/scraping/domain/entities/newsArticle';
+
 
 export interface INewsArticleRepository {
-    upsert(article: NewsArticleEntity): Promise<void>;
+    upsert(article: NewsArticle): Promise<void>;
 
-    findRecentWithSourceDiversity(
-        limit: number,): Promise<PrismaNewsArticle[]>;
-    }
+    findRecentWithSourceDiversity(limit: number,): Promise<NewsArticle[]>;
+}
