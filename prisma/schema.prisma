@@ -77,3 +77,19 @@ model PasswordResetToken {
 
   @@map("password_reset_token")
 }
+
+model NewsArticle {
+  id               String    @id @default(cuid())
+  title            String
+  subtitle         String?
+  articleUrl       String    @unique 
+  source           String
+  font             String?
+  theme            String?
+  publicationDate  DateTime?
+  articleContent   String    
+  author           Json?     
+
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}

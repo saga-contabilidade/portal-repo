@@ -1,6 +1,7 @@
 import { PrismaUserRepository } from '@/modules/auth/infrastructure/data/Prisma-user.repository';
 import { JwtService } from '@/modules/auth/infrastructure/services/Jwt.service';
 import bcrypt from 'bcrypt';
+import { InvalidCredentialsError } from './error/InvalidCredentialsError';
 
 type LoginInput = { email: string; password: string };
 type LoginOutput = { token: string };
@@ -20,7 +21,7 @@ export class LoginUseCase {
       : false;
 
     if (!isPasswordValid) {
-      throw new Error('Credenciais inválidas.');
+      throw new InvalidCredentialsError();
     }
 
     const payload = {

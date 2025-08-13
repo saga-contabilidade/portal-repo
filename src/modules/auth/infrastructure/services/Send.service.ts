@@ -1,3 +1,4 @@
+import { config } from '@/config';
 import { MailtrapClient } from 'mailtrap';
 
 export interface IMailService {
@@ -10,17 +11,13 @@ export interface IMailService {
 
 export class MailtrapClientService implements IMailService{
     private client: MailtrapClient;
-    private readonly fromEmail = process.env.EMAIL_FROM!;
-    private readonly domainLink = process.env.DOMAIN_LINK_URL;
-    private readonly fromName = process.env.EMAIL_NAME_FROM!;
-    private readonly templateUuid = process.env.MAILTRAP_PASSWORD_RESET_TEMPLATE_UUID;
+    private readonly fromEmail = config.mail.fromEmail;
+    private readonly domainLink = config.mail.domainLink;
+    private readonly fromName = config.mail.fromName;
+    private readonly templateUuid = config.mail.templates.passwordReset;
 
     constructor(){
-        const token = process.env.MAILTRAP_API_KEY;
-        if(!token) {
-            throw new Error("A API do Mailtrap (MAIL_API_KEY) não está configurada.");
-        }
-        this.client = new MailtrapClient({ token });
+        this.client = new MailtrapClient({ token: config.mail.token });
     }
 
     async sendPasswordResetEmail(to: string, name: string, token: string): Promise<void> {
@@ -31,7 +28,7 @@ export class MailtrapClientService implements IMailService{
             await this.client.send({
                 from: sender,
                 to: [{ email: to }],
-                template_uuid: this.templateUuid as string,
+                template_uuid: this.templateUuid,
                 template_variables: {
                     "user_name": name,
                     "user_email": to,
@@ -40,7 +37,7 @@ export class MailtrapClientService implements IMailService{
             });
 
         } catch (error) {
-
+            console.error("Mailtrap service error:", error);
             throw new Error("Não foi possível enviar o e-mail de redefinição de senha.");
         }
     }

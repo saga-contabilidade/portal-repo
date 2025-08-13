@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
             { message: 'Se o e-mail existir, você receberá instruções para redefinir sua senha.' }
         );
 
-    } catch (error: any) {
+    } catch (error) {
 
         if (error instanceof UserNotFoundError){
             return NextResponse.json(
