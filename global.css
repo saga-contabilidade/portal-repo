@@ -1,0 +1,71 @@
+/* --- Variáveis e Reset Básico --- */
+:root {
+  --header-height: 70px; /* Altura do seu header. Ajuste se necessário. */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa; /* Fundo neutro para o corpo */
+  color: #333;
+}
+
+/* --- Container Principal --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* --- Cabeçalho Global Fixo --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Correção: Usar 100% em vez de 100vw */
+  height: var(--header-height);
+  background-color: #ffffff;
+  border-bottom: 1px solid #ececec;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Rodapé Global Fixo --- */
+footer.footer-hub-columns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Correção: Usar 100% em vez de 100vw */
+  background-color: #ffffff;
+  border-top: 1px solid #ececec;
+  z-index: 1000;
+  padding: 16px 0;
+}
+
+.footer-hub-columns-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Conteúdo Principal --- */
+main.main-content {
+  /* Espaçamento para não ficar atrás do header e footer fixos */
+  padding-top: var(--header-height);
+  padding-bottom: 80px; /* Espaço para o rodapé + margem */
+}
+
+main.main-content > .container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}

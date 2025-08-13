@@ -30,7 +30,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "ts-node": "^10.9.2",
+<<<<<<< HEAD
     "zod": "^4.0.14"
+=======
+    "form-data": ">=4.0.4"
+>>>>>>> main
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -48,6 +52,7 @@
     "eslint-plugin-unicorn": "^59.0.1",
     "stylelint": "^16.0.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "form-data": ">=4.0.4"
   }
 }

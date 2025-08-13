@@ -3,7 +3,11 @@ import { prisma } from '@/lib/prisma';
 import { LoginUseCase } from '@/modules/auth/application/Login-use.case';
 import { PrismaUserRepository } from '@/modules/auth/infrastructure/data/Prisma-user.repository';
 import { JwtService } from '@/modules/auth/infrastructure/services/Jwt.service';
+<<<<<<< HEAD
 import { InvalidCredentialsError } from '@/modules/auth/application/error/InvalidCredentialsError';
+=======
+import prisma from '@/modules/auth/infrastructure/data/prisma-client';
+>>>>>>> main
 
 
 export async function POST(req: Request){

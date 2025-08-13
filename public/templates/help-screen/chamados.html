@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/help-screen/chamados.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="cabecalho-principal">
+                <a href="/public/templates/news-screen/noticias.html" class="logo-principal">
+                    <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo">
+                    <span>SagaHub</span>
+                </a>
+                <nav class="menu-navegacao">
+                    <a href="/public/templates/news-screen/noticias.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="M7 8h10M7 12h6M7 16h6" stroke-linecap="round"/>
+                        </svg>
+                        Notícias
+                    </a>
+                    <a href="/public/templates/tax-screen/fiscal.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <path d="M7 8h10M7 12h10M7 16h4" stroke-linecap="round"/>
+                        </svg>
+                        Fiscal
+                    </a>
+                    <a href="/public/templates/kanban-screen/kanban.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                        </svg>
+                        Kanban
+                    </a>
+                    <a href="/public/templates/help-screen/chamados.html" class="ativo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2" y="15" width="4" height="6" rx="2"/>
+                            <rect x="18" y="15" width="4" height="6" rx="2"/>
+                        </svg>
+                        Chamados
+                    </a>
+                    <a href="/public/templates/chat-screen/chat.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Chat Interno
+                    </a>
+                </nav>
+                <div class="area-direita-navbar">
+                    <div class="area-notificacoes">
+                        <span class="icone-sino"></span>
+                        <span class="ponto-notificacao"></span>
+                    </div>
+                    <div class="perfil-usuario">
+                        <span class="icone-perfil"></span>
+                        <div class="informacoes-perfil">
+                            <span class="nome-perfil">João Silva</span>
+                            <span class="cargo-perfil">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="card-padrao">
+                <div class="kanban-header">
+                    <div class="kanban-title-section">
+                        <h1 class="titulo-pagina">Chamados</h1>
+                        <p class="subtitulo-pagina">Gerencie suas solicitações e acompanhe o suporte</p>
+                    </div>
+                    <button id="btnNovoChamado" class="botao-primario" style="margin-bottom: 18px;">+ Novo Chamado</button>
+                </div>
+            </div>
+
+            <section class="summary-cards">
+                <div class="card-resumo">
+                    <div class="card-resumo-header">
+                        <span class="card-resumo-titulo">Chamados Abertos</span>
+                        <svg class="card-resumo-icone alerta" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <p class="card-resumo-numero">12</p>
+                </div>
+                <div class="card-resumo">
+                    <div class="card-resumo-header">
+                        <span class="card-resumo-titulo">Em Andamento</span>
+                        <svg class="card-resumo-icone andamento" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <p class="card-resumo-numero">8</p>
+                </div>
+                <div class="card-resumo">
+                    <div class="card-resumo-header">
+                        <span class="card-resumo-titulo">Resolvidos Hoje</span>
+                        <svg class="card-resumo-icone resolvido" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <p class="card-resumo-numero">5</p>
+                </div>
+            </section>
+
+            <section class="lista-chamados">
+                <div class="lista-chamados-header">
+                    <h2 class="titulo-secao">
+                        <svg width="24" height="24" style="vertical-align: middle; margin-right: 6px;" fill="none" stroke="#2b5fc2" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h6"/></svg>
+                        Lista de Chamados
+                    </h2>
+                    <p class="lista-chamados-sub">Acompanhe todos os chamados de suporte</p>
+                </div>
+                <div class="cards-chamados">
+                    <!-- Card 1 -->
+                    <div class="card-chamado">
+                        <div class="card-chamado-top">
+                            <div>
+                                <span class="chamado-id">#1</span>
+                                <span class="chamado-titulo">Problema no sistema fiscal</span>
+                            </div>
+                            <div class="chamado-actions">
+                                <button class="dots-btn">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="6" r="2" fill="#888"/>
+                                        <circle cx="12" cy="12" r="2" fill="#888"/>
+                                        <circle cx="12" cy="18" r="2" fill="#888"/>
+                                    </svg>
+                                </button>
+                                <div class="dots-menu">
+                                    <button>Editar</button>
+                                    <button>Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-chamado-middle">
+                            <p class="chamado-descricao">Erro ao gerar relatório mensal</p>
+                        </div>
+                        <div class="card-chamado-bottom">
+                            <div class="chamado-info">
+                                <span class="chamado-user"><span class="user-icon">👤</span> João Silva</span>
+                                <span class="chamado-date">14/01/2024</span>
+                                <span class="prioridade prioridade-alta">Alta Prioridade</span>
+                            </div>
+                            <span class="status-chamado status-aberto">Aberto</span>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card-chamado">
+                        <div class="card-chamado-top">
+                            <div>
+                                <span class="chamado-id">#2</span>
+                                <span class="chamado-titulo">Dúvida sobre kanban</span>
+                            </div>
+                            <div class="chamado-actions">
+                                <button class="dots-btn">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="6" r="2" fill="#888"/>
+                                        <circle cx="12" cy="12" r="2" fill="#888"/>
+                                        <circle cx="12" cy="18" r="2" fill="#888"/>
+                                    </svg>
+                                </button>
+                                <div class="dots-menu">
+                                    <button>Editar</button>
+                                    <button>Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-chamado-middle">
+                            <p class="chamado-descricao">Como mover tarefas entre colunas</p>
+                        </div>
+                        <div class="card-chamado-bottom">
+                            <div class="chamado-info">
+                                <span class="chamado-user"><span class="user-icon">👤</span> Maria Santos</span>
+                                <span class="chamado-date">13/01/2024</span>
+                                <span class="prioridade prioridade-media">Media Prioridade</span>
+                            </div>
+                            <span class="status-chamado status-andamento">Em Andamento</span>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card-chamado">
+                        <div class="card-chamado-top">
+                            <div>
+                                <span class="chamado-id">#3</span>
+                                <span class="chamado-titulo">Solicitar nova funcionalidade</span>
+                            </div>
+                            <div class="chamado-actions">
+                                <button class="dots-btn">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="6" r="2" fill="#888"/>
+                                        <circle cx="12" cy="12" r="2" fill="#888"/>
+                                        <circle cx="12" cy="18" r="2" fill="#888"/>
+                                    </svg>
+                                </button>
+                                <div class="dots-menu">
+                                    <button>Editar</button>
+                                    <button>Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-chamado-middle">
+                            <p class="chamado-descricao">Implementar notificações push</p>
+                        </div>
+                        <div class="card-chamado-bottom">
+                            <div class="chamado-info">
+                                <span class="chamado-user"><span class="user-icon">👤</span> Carlos Lima</span>
+                                <span class="chamado-date">12/01/2024</span>
+                                <span class="prioridade prioridade-baixa">Baixa Prioridade</span>
+                            </div>
+                            <span class="status-chamado status-resolvido">Resolvido</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("/public/templates/footer-hub/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+</body>
+</html>
