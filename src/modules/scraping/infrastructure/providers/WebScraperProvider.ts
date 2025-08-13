@@ -21,6 +21,7 @@ interface RawArticleData {
 }
 
 const window = new JSDOM('').window;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const DOMPurify = createDOMPurify(window as any);
 
 export interface INewsProvider {
