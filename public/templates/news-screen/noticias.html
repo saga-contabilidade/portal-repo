@@ -157,13 +157,13 @@
         </div>
     </main>
     <script src="/public/scripts/news/noticias.js" defer></script>
-    <footer class="footer-hub-columns" style="position: fixed; left: 0; right: 0; bottom: 0; width: 100vw; background: #fff; border-top: 1px solid #ececec; z-index: 100;">
-    <div class="container">
-        <div class="footer-hub-columns-bottom" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;">
-        <span style="color: #888;">© 2025 SagaHub. Todos os direitos reservados.</span>
-        <span><span style="color: #a32924; font-weight: 600;">Powered by</span><span style="color: #888; font-weight: 400;"> Augusto Pisa e Miguel Castellani</span></span>
-              </div>
-    </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("/public/templates/footer-hub/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
 </body>
 </html> 
