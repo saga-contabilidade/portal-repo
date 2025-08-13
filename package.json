@@ -10,7 +10,7 @@
     "lint:frontend": "eslint ./public && stylelint '**/*.css'"
   },
   "dependencies": {
-    "@prisma/client": "^6.11.1",
+    "@prisma/client": "^6.13.0",
     "@types/node-cron": "^3.0.11",
     "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
@@ -25,7 +25,7 @@
     "ms": "^2.1.3",
     "next": "15.3.5",
     "node-cron": "^4.2.1",
-    "prisma": "^6.11.1",
+    "prisma": "^6.13.0",
     "puppeteer": "^24.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
