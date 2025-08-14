@@ -1,3 +1,4 @@
+
 /* ===== ESTILOS ESPECÍFICOS DO FISCAL ===== */
 
 .fiscal-container {
@@ -140,34 +141,10 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.footer-hub-columns {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  background: #fff;
-  border-top: 1px solid #ececec;
-  z-index: 100;
+.fiscal-container {
+    padding-bottom: 80px; /* altura do footer + margem */
 }
-.footer-hub-columns-bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.footer-hub-powered {
-  color: #a32924;
-  font-weight: 600;
-}
-.footer-hub-authors {
-  color: #888;
-  font-weight: 400;
-}
+
 .fiscal-cards--tools {
   display: flex;
   flex-direction: row;
@@ -318,21 +295,7 @@
   .fiscal-panel-dev__title {
     font-size: 1.1rem;
   }
-  .fiscal-panel-dev__subtitle {
-    margin-left: 0;
-    font-size: 0.95rem;
-  }
-  .fiscal-panel-dev__main {
-    font-size: 1rem;
-  }
-  .fiscal-panel-dev__desc {
-    font-size: 0.95rem;
-  }
-  .fiscal-cards--duo {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-  }
+
   .fiscal-card-duo-col {
     flex-direction: row;
     gap: 16px;
