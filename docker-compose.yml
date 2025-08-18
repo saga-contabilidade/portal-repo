@@ -1,0 +1,49 @@
+name: 'portal-saga'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_DOMAIN_LINK_URL: ${NEXT_PUBLIC_DOMAIN_LINK_URL}
+    image: portal-saga_app 
+    env_file:
+      - .env.local
+    ports:
+      - "3000:3000"
+    command: sh -c "npx prisma migrate deploy && node server.js"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  worker:
+    image: portal-saga_app
+    env_file:
+      - .env.local
+    command: npx tsx -r tsconfig-paths/register src/scripts/run-work.ts
+    depends_on:
+      app:
+        condition: service_started
+      redis:
+        condition: service_healthy
+
+  migrate:
+    image: portal-saga_app
+    env_file:
+      - .env.local
+    command: npx prisma migrate deploy
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  redis_data:
