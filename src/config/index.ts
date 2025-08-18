@@ -1,8 +1,9 @@
 import 'dotenv/config';
 import { z } from 'zod';
 
-const envSchema = z.object({
-    DATABASE_URL: z.url().default('https://www.contabeis.com.br/noticias/'),
+const envSchema = z
+  .object({
+    DATABASE_URL: z.string().min(1).default('file:./prisma/dev.db'),
     REDIS_HOST: z.string().default('127.0.0.1'),
     REDIS_PORT: z.coerce.number().default(6379),
     NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
@@ -11,9 +12,9 @@ const envSchema = z.object({
     MAILTRAP_API_KEY: z.string().min(1, "A chave da API do Mailtrap é obrigatória."),
     EMAIL_FROM: z.email("EMAIL_FROM deve ser um e-mail válido."),
     EMAIL_NAME_FROM: z.string().min(1, "O nome do remetente (EMAIL_NAME_FROM) é obrigatório."),
-    DOMAIN_LINK_URL: z.url("A URL do domínio (DOMAIN_LINK_URL) é obrigatória."),
+    NEXT_PUBLIC_DOMAIN_LINK_URL: z.url().catch('saga.cnt.br'),
     MAILTRAP_PASSWORD_RESET_TEMPLATE_UUID: z.uuid("O UUID do template do Mailtrap é obrigatório."),
-});
+  });
 
 const parsedEnv = envSchema.safeParse(process.env);
 
@@ -38,7 +39,7 @@ export const config = {
         token: parsedEnv.data.MAILTRAP_API_KEY,
         fromEmail: parsedEnv.data.EMAIL_FROM,
         fromName: parsedEnv.data.EMAIL_NAME_FROM,
-        domainLink: parsedEnv.data.DOMAIN_LINK_URL,
+        domainLink: parsedEnv.data.NEXT_PUBLIC_DOMAIN_LINK_URL,
         templates: {
         passwordReset: parsedEnv.data.MAILTRAP_PASSWORD_RESET_TEMPLATE_UUID,
         },
