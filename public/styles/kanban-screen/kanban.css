@@ -1,4 +1,8 @@
-/* ===== ESTILOS ESPECÍFICOS DO KANBAN ===== */
+.botao-primario {
+  display: block;
+  margin: 20px auto; /* centraliza */
+  text-align: center;
+}
 
 /* Header do Kanban - Alinhamento do título e botão */
 .kanban-header {
