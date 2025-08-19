@@ -189,19 +189,24 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
+ /* Centralizar com Flexbox */
+    display: flex; /* Adicione esta linha */
+    align-items: center; /* Adicione esta linha */
+    justify-content: center; /* Adicione esta linha */
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 5% auto;
+    margin: 0; /* Altere para 0 para centralizar verticalmente */
     padding: 0;
     border-radius: 16px;
     width: 90%;
     max-width: 600px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     animation: modalSlideIn 0.3s ease;
+    max-height: 90vh; /* Limita a altura do modal para evitar que ele seja muito grande em telas pequenas */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior que a altura */
 }
-
 @keyframes modalSlideIn {
     from {
         opacity: 0;
@@ -384,4 +389,32 @@
     .task-card {
         padding: 16px;
     }
+}
+
+/* Estilo para o modal de exclusão */
+.small-modal {
+    max-width: 450px !important; /* Tamanho menor para o pop-up de confirmação */
+}
+
+.modal-body {
+    padding: 24px 32px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Botão de exclusão com cor de alerta */
+.btn-primary-delete {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary-delete:hover {
+    background: #e63946;
 }

@@ -403,3 +403,31 @@ header {
         display: none;
     }
 } 
+
+/* Estilo para o modal de exclusão */
+.small-modal {
+    max-width: 450px !important; /* Tamanho menor para o pop-up de confirmação */
+}
+
+.modal-body {
+    padding: 24px 32px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Botão de exclusão com cor de alerta */
+.btn-primary-delete {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary-delete:hover {
+    background: #e63946;
+}

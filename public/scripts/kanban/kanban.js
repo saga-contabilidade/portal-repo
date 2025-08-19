@@ -3,7 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeKanban();
     initializeModal();
     initializeDragAndDrop();
+    
+    // Adicionar botões de ação aos cards existentes
+    document.querySelectorAll('.task-card').forEach(addActionButtons);
 });
+
+// Variável global para armazenar a tarefa a ser excluída
+let taskCardToDelete = null;
 
 // Inicialização do Kanban
 function initializeKanban() {
@@ -39,7 +45,7 @@ function setDefaultDeadline() {
 // Modal de Nova Tarefa
 function openNewTaskModal() {
     const modal = document.getElementById('taskModal');
-    modal.style.display = 'block';
+    modal.style.display = 'flex'; // Corrigido para centralizar
     document.body.style.overflow = 'hidden';
     
     // Focar no primeiro campo
@@ -71,7 +77,7 @@ function initializeModal() {
     
     // Fechar modal com ESC
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
             closeNewTaskModal();
         }
     });
@@ -100,9 +106,14 @@ function createNewTask() {
     // Criar elemento da tarefa
     const taskCard = createTaskCard(taskData);
     
+    // Adicionar botões de ação para a nova tarefa
+    addActionButtons(taskCard);
+
     // Adicionar à coluna "A Fazer"
-    const todoColumn = document.getElementById('todo-column');
-    todoColumn.appendChild(taskCard);
+    const todoColumn = document.getElementById('todo-column-content');
+    if (todoColumn) {
+        todoColumn.appendChild(taskCard);
+    }
     
     // Atualizar contadores
     updateTaskCounts();
@@ -254,24 +265,21 @@ function handleDrop(e) {
     
     if (draggedElement) {
         // Remover elemento da posição original
-        draggedElement.remove();
+        const originalParent = draggedElement.parentElement;
+        originalParent.removeChild(draggedElement);
         
         // Adicionar à nova coluna
         this.appendChild(draggedElement);
         
-        // Atualizar status da tarefa
-        const columnId = this.id;
-        let newStatus = 'todo';
-        
-        if (columnId === 'in-progress-column') {
-            newStatus = 'in-progress';
-        } else if (columnId === 'done-column') {
-            newStatus = 'done';
+        // Atualiza a classe 'completed' com base na nova coluna
+        const newStatus = this.parentElement.id.replace('kanban-', '').replace('-column', '');
+        if (newStatus === 'done') {
             draggedElement.classList.add('completed');
         } else {
             draggedElement.classList.remove('completed');
         }
         
+        // Atualiza o data-status da tarefa
         draggedElement.dataset.status = newStatus;
         
         // Atualizar contadores
@@ -288,41 +296,31 @@ function handleDrop(e) {
     }
 }
 
-// Adicionar funcionalidade de drag and drop para novas tarefas
-document.addEventListener('DOMContentLoaded', function() {
-    // Observer para novas tarefas
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            mutation.addedNodes.forEach(function(node) {
-                if (node.nodeType === 1 && node.classList.contains('task-card')) {
-                    node.addEventListener('dragstart', handleDragStart);
-                    node.addEventListener('dragend', handleDragEnd);
-                }
-            });
-        });
-    });
-    
-    // Observar mudanças em todas as colunas
-    document.querySelectorAll('.column-content').forEach(column => {
-        observer.observe(column, { childList: true });
-    });
-});
+// Modal de confirmação de exclusão
+function openDeleteModal(taskCard) {
+    taskCardToDelete = taskCard;
+    const modal = document.getElementById('deleteModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
 
-// Funcionalidades adicionais
-function deleteTask(taskCard) {
-    if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
-        taskCard.remove();
+function closeDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    taskCardToDelete = null;
+}
+
+function confirmDelete() {
+    if (taskCardToDelete) {
+        taskCardToDelete.remove();
         updateTaskCounts();
         showNotification('Tarefa excluída', 'success');
+        closeDeleteModal();
     }
 }
 
-function editTask(taskCard) {
-    // Implementar edição de tarefa
-    console.log('Editar tarefa:', taskCard);
-}
-
-// Adicionar botões de ação aos cards (opcional)
+// Botões de ação do card (Editar/Excluir)
 function addActionButtons(taskCard) {
     const actions = document.createElement('div');
     actions.className = 'task-actions';
@@ -330,7 +328,7 @@ function addActionButtons(taskCard) {
         position: absolute;
         top: 8px;
         right: 8px;
-        display: none;
+        display: flex;
         gap: 4px;
     `;
     
@@ -341,7 +339,7 @@ function addActionButtons(taskCard) {
                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
             </svg>
         </button>
-        <button onclick="deleteTask(this.parentElement.parentElement)" style="background: none; border: none; cursor: pointer; padding: 4px; color: #ff4d4f;">
+        <button onclick="openDeleteModal(this.parentElement.parentElement)" style="background: none; border: none; cursor: pointer; padding: 4px; color: #ff4d4f;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="3,6 5,6 21,6"></polyline>
                 <path d="M19,6v14a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6m3,0V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2V6"></path>
@@ -361,7 +359,17 @@ function addActionButtons(taskCard) {
     });
 }
 
-// Adicionar botões de ação aos cards existentes
+
+// Listener para o botão de confirmação
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.task-card').forEach(addActionButtons);
+    const confirmBtn = document.getElementById('confirmDeleteBtn');
+    if (confirmBtn) {
+        confirmBtn.addEventListener('click', confirmDelete);
+    }
 });
+
+// Funcionalidade de edição (vazio por enquanto)
+function editTask(taskCard) {
+    console.log('Editar tarefa:', taskCard);
+    // Implementar a lógica de edição aqui
+}
