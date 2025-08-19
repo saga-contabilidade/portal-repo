@@ -21,7 +21,7 @@ export class ScrapeAndSaveArticleUseCase {
             return
         }
 
-        const articleData = { ...rowData, source, aritcleUrl: url };
+        const articleData = { ...rowData, source, articleUrl: url };
 
         const validationResult = NewsArticleSchema.safeParse(articleData);
         if (!validationResult.success) {
