@@ -180,7 +180,7 @@
 
 /* Modal */
 .modal {
-    display: none;
+    display: none; /* Garanta que esta linha esteja presente e seja a primeira */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -189,11 +189,10 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
- /* Centralizar com Flexbox */
-    display: flex; /* Adicione esta linha */
-    align-items: center; /* Adicione esta linha */
-    justify-content: center; /* Adicione esta linha */
-}
+    /* Centralizar com Flexbox */
+    align-items: center; 
+    justify-content: center;
+    }
 
 .modal-content {
     background-color: #fff;
@@ -296,10 +295,10 @@
 }
 
 .modal-actions {
+    padding: 16px 32px; /* Exemplo de padding em cima, baixo, esquerda e direita */
     display: flex;
-    gap: 12px;
-    justify-content: flex-end;
-    margin-top: 32px;
+    justify-content: flex-end; /* Mantém os botões alinhados à direita */
+    gap: 10px; /* Espaço entre os botões */
 }
 
 .btn-secondary {
@@ -404,7 +403,7 @@
 
 /* Botão de exclusão com cor de alerta */
 .btn-primary-delete {
-    background: #ff4d4f;
+    background: #a32924;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -416,5 +415,5 @@
 }
 
 .btn-primary-delete:hover {
-    background: #e63946;
+    background: #a32924;
 }
