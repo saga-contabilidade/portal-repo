@@ -33,7 +33,11 @@ worker.on('completed', (job) => {
 });
 
 worker.on('failed', (job, err) => {
-    console.error(`❌ Job ${job?.id} falhou: ${err.message}`);  
+    console.error(`❌ Job ${job?.id} falhou:`, err);
+    if (err instanceof Error) {
+        console.error(`   Mensagem: ${err.message}`);
+        console.error(`   Stack: ${err.stack}`);
+    }
 });
 
 const gracefulShutdown = async () => {
