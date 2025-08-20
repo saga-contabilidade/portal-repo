@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/public/assets/img/logo-cubo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -28,17 +29,17 @@
                         Notícias
                     </a>
                     <a href="/public/templates/tax-screen/fiscal.html">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-                          <rect x="8" y="6" width="8" height="4" rx="1"/>
-                          <line x1="8" y1="14" x2="8" y2="14"/>
-                          <line x1="12" y1="14" x2="12" y2="14"/>
-                          <line x1="16" y1="14" x2="16" y2="14"/>
-                          <line x1="8" y1="18" x2="8" y2="18"/>
-                          <line x1="12" y1="18" x2="12" y2="18"/>
-                          <line x1="16" y1="18" x2="16" y2="18"/>
-                      </svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                            <rect x="8" y="6" width="8" height="4" rx="1"/>
+                            <line x1="8" y1="14" x2="8" y2="14"/>
+                            <line x1="12" y1="14" x2="12" y2="14"/>
+                            <line x1="16" y1="14" x2="16" y2="14"/>
+                            <line x1="8" y1="18" x2="8" y2="18"/>
+                            <line x1="12" y1="18" x2="12" y2="18"/>
+                            <line x1="16" y1="18" x2="16" y2="18"/>
+                        </svg>
                         Fiscal
                     </a>
                     <a href="/public/templates/kanban-screen/kanban.html">
@@ -93,143 +94,95 @@
                     <button id="btnNovoChamado" class="botao-primario" style="margin-bottom: 18px;">+ Novo Chamado</button>
                 </div>
             </div>
-
             <section class="summary-cards">
                 <div class="card-resumo">
                     <div class="card-resumo-header">
                         <span class="card-resumo-titulo">Chamados Abertos</span>
                         <svg class="card-resumo-icone alerta" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     </div>
-                    <p class="card-resumo-numero">12</p>
+                    <p class="card-resumo-numero">0</p>
                 </div>
                 <div class="card-resumo">
                     <div class="card-resumo-header">
                         <span class="card-resumo-titulo">Em Andamento</span>
                         <svg class="card-resumo-icone andamento" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
-                    <p class="card-resumo-numero">8</p>
+                    <p class="card-resumo-numero">0</p>
                 </div>
                 <div class="card-resumo">
                     <div class="card-resumo-header">
-                        <span class="card-resumo-titulo">Resolvidos Hoje</span>
+                        <span class="card-resumo-titulo">Finalizados Hoje</span>
                         <svg class="card-resumo-icone resolvido" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
-                    <p class="card-resumo-numero">5</p>
+                    <p class="card-resumo-numero">0</p>
                 </div>
             </section>
-
-            <section class="lista-chamados">
-                <div class="lista-chamados-header">
-                    <h2 class="titulo-secao">
-                        <svg width="24" height="24" style="vertical-align: middle; margin-right: 6px;" fill="none" stroke="#2b5fc2" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h6"/></svg>
-                        Lista de Chamados
-                    </h2>
-                    <p class="lista-chamados-sub">Acompanhe todos os chamados de suporte</p>
-                </div>
-                <div class="cards-chamados">
-                    <!-- Card 1 -->
-                    <div class="card-chamado">
-                        <div class="card-chamado-top">
-                            <div>
-                                <span class="chamado-id">#1</span>
-                                <span class="chamado-titulo">Problema no sistema fiscal</span>
-                            </div>
-                            <div class="chamado-actions">
-                                <button class="dots-btn">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="6" r="2" fill="#888"/>
-                                        <circle cx="12" cy="12" r="2" fill="#888"/>
-                                        <circle cx="12" cy="18" r="2" fill="#888"/>
-                                    </svg>
-                                </button>
-                                <div class="dots-menu">
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-chamado-middle">
-                            <p class="chamado-descricao">Erro ao gerar relatório mensal</p>
-                        </div>
-                        <div class="card-chamado-bottom">
-                            <div class="chamado-info">
-                                <span class="chamado-user"><span class="user-icon">👤</span> João Silva</span>
-                                <span class="chamado-date">14/01/2024</span>
-                                <span class="prioridade prioridade-alta">Alta Prioridade</span>
-                            </div>
-                            <span class="status-chamado status-aberto">Aberto</span>
-                        </div>
+            
+            <div class="card-padrao">
+                <section class="lista-chamados">
+                    <div class="lista-chamados-header">
+                        <h2 class="titulo-secao">Lista de Chamados</h2>
+                        <p class="lista-chamados-sub">Acompanhe todos os chamados de suporte</p>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="card-chamado">
-                        <div class="card-chamado-top">
-                            <div>
-                                <span class="chamado-id">#2</span>
-                                <span class="chamado-titulo">Dúvida sobre kanban</span>
-                            </div>
-                            <div class="chamado-actions">
-                                <button class="dots-btn">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="6" r="2" fill="#888"/>
-                                        <circle cx="12" cy="12" r="2" fill="#888"/>
-                                        <circle cx="12" cy="18" r="2" fill="#888"/>
-                                    </svg>
-                                </button>
-                                <div class="dots-menu">
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
-                                </div>
-                            </div>
+                    <div class="cards-chamados">
                         </div>
-                        <div class="card-chamado-middle">
-                            <p class="chamado-descricao">Como mover tarefas entre colunas</p>
-                        </div>
-                        <div class="card-chamado-bottom">
-                            <div class="chamado-info">
-                                <span class="chamado-user"><span class="user-icon">👤</span> Maria Santos</span>
-                                <span class="chamado-date">13/01/2024</span>
-                                <span class="prioridade prioridade-media">Media Prioridade</span>
-                            </div>
-                            <span class="status-chamado status-andamento">Em Andamento</span>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="card-chamado">
-                        <div class="card-chamado-top">
-                            <div>
-                                <span class="chamado-id">#3</span>
-                                <span class="chamado-titulo">Solicitar nova funcionalidade</span>
-                            </div>
-                            <div class="chamado-actions">
-                                <button class="dots-btn">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="6" r="2" fill="#888"/>
-                                        <circle cx="12" cy="12" r="2" fill="#888"/>
-                                        <circle cx="12" cy="18" r="2" fill="#888"/>
-                                    </svg>
-                                </button>
-                                <div class="dots-menu">
-                                    <button>Editar</button>
-                                    <button>Excluir</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-chamado-middle">
-                            <p class="chamado-descricao">Implementar notificações push</p>
-                        </div>
-                        <div class="card-chamado-bottom">
-                            <div class="chamado-info">
-                                <span class="chamado-user"><span class="user-icon">👤</span> Carlos Lima</span>
-                                <span class="chamado-date">12/01/2024</span>
-                                <span class="prioridade prioridade-baixa">Baixa Prioridade</span>
-                            </div>
-                            <span class="status-chamado status-resolvido">Resolvido</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
+    
+    <div id="modalChamado" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Novo Chamado</h3>
+                <button id="closeModalBtn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formChamado">
+                    <div class="form-group">
+                        <label for="tituloChamado">Título</label>
+                        <input type="text" id="tituloChamado" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricaoChamado">Descrição</label>
+                        <textarea id="descricaoChamado" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prioridadeChamado">Prioridade</label>
+                            <select id="prioridadeChamado" required>
+                                <option value="Baixa">Baixa</option>
+                                <option value="Media">Média</option>
+                                <option value="Alta">Alta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prazoChamado">Prazo</label>
+                            <input type="date" id="prazoChamado">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsavelChamado">Responsável</label>
+                        <select id="responsavelChamado" required>
+                            <option value="Joao Silva">João Silva</option>
+                            <option value="Maria Santos">Maria Santos</option>
+                            <option value="Carlos Lima">Carlos Lima</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancelarModalBtn" class="cancel-btn">Cancelar</button>
+                        <button type="submit" id="salvarModalBtn" class="primary-btn">Criar Chamado</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+                <div class="status-menu hidden-status-menu">
+                    <button data-status="Aberto">Aberto</button>
+                    <button data-status="Em Andamento">Em Andamento</button>
+                    <button data-status="Finalizado">Finalizado</button>
+                </div>
+            </div>
 
     <div id="footer-placeholder"></div>
     <script>
@@ -239,5 +192,7 @@
           document.getElementById("footer-placeholder").innerHTML = data;
         });
     </script>
+    <script src="/public/scripts/help/chamados.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
