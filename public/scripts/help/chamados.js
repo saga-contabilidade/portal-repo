@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const cancelarModalBtn = document.getElementById('cancelarModalBtn');
     const cardsChamadosContainer = document.querySelector('.cards-chamados');
-    
+
     // Contadores para os cartões de resumo
     const contadorAbertos = document.querySelector('.card-resumo:nth-child(1) .card-resumo-numero');
     const contadorEmAndamento = document.querySelector('.card-resumo:nth-child(2) .card-resumo-numero');
@@ -16,13 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let chamadoEmEdicao = null;
     let proximoNumeroChamado = cardsChamadosContainer.children.length + 1;
 
-    const fecharModal = () => {
-        modalChamado.classList.add('hidden');
-        formChamado.reset();
-        modoEdicao = false;
-        chamadoEmEdicao = null;
-        document.querySelector('#modalChamado h3').textContent = 'Novo Chamado';
-        document.getElementById('salvarModalBtn').textContent = 'Salvar'; // Revertido para "Salvar"
+    const fecharModal = (modal) => {
+        modal.classList.add('hidden');
     };
 
     const atualizarContadores = () => {
@@ -117,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
         modalChamado.classList.remove('hidden');
     });
 
-    closeModalBtn.addEventListener('click', fecharModal);
-    cancelarModalBtn.addEventListener('click', fecharModal);
+    closeModalBtn.addEventListener('click', () => fecharModal(modalChamado));
+    cancelarModalBtn.addEventListener('click', () => fecharModal(modalChamado));
 
     modalChamado.addEventListener('click', (event) => {
         if (event.target === modalChamado) {
-            fecharModal();
+            fecharModal(modalChamado);
         }
     });
 
@@ -141,14 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
             chamadoEmEdicao.querySelector('.chamado-prioridade').textContent = prioridade + ' Prioridade';
             chamadoEmEdicao.querySelector('.chamado-prioridade').className = `chamado-prioridade prioridade-${prioridade.toLowerCase()}`;
             chamadoEmEdicao.dataset.prioridade = prioridade;
-            fecharModal();
+            fecharModal(modalChamado);
             ordenarChamados();
             atualizarContadores();
         } else {
             const novoCardHtml = criarCardChamado(proximoNumeroChamado, titulo, descricao, prioridade, responsavel);
             cardsChamadosContainer.insertAdjacentHTML('beforeend', novoCardHtml);
             proximoNumeroChamado++;
-            fecharModal();
+            fecharModal(modalChamado);
             ordenarChamados();
             atualizarContadores();
         }
@@ -216,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             chamadoEmEdicao = card;
             
             document.querySelector('#modalChamado h3').textContent = 'Editar Chamado';
-            document.getElementById('salvarModalBtn').textContent = 'Salvar'; // Revertido para "Salvar"
+            document.getElementById('salvarModalBtn').textContent = 'Salvar';
             document.getElementById('tituloChamado').value = card.querySelector('.chamado-titulo').textContent;
             document.getElementById('descricaoChamado').value = card.querySelector('.chamado-descricao').textContent;
             document.getElementById('prioridadeChamado').value = card.dataset.prioridade;
@@ -224,14 +219,33 @@ document.addEventListener('DOMContentLoaded', () => {
             modalChamado.classList.remove('hidden');
         }
 
-        // Lógica para o botão de excluir
+        // Lógica para o botão de excluir com SweetAlert2
         if (event.target.classList.contains('btn-excluir')) {
-            const card = event.target.closest('.card-chamado');
-            const confirmacao = confirm('Tem certeza que deseja excluir este chamado?');
-            if (confirmacao) {
-                card.remove();
-                atualizarContadores();
-            }
+            const cardParaExcluir = event.target.closest('.card-chamado');
+
+            Swal.fire({
+                title: 'Tem certeza?',
+                text: "Você não poderá reverter isso!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#a32924',
+                cancelButtonColor: '#a32924',
+                confirmButtonText: 'Sim, excluir!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+// ...
+                if (result.isConfirmed) {
+                    cardParaExcluir.remove();
+                    atualizarContadores();
+                    Swal.fire({
+                        title: 'Excluído!',
+                        text: 'O chamado foi excluído com sucesso.',
+                        icon: 'success',
+                        confirmButtonColor: '#a32924' // Adicione esta linha
+                    });
+                }
+// ...
+            });
         }
     });
 
