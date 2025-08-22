@@ -4,12 +4,14 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 
 export async function addScrapingJobs(): Promise<number> {
-  const scrapingQueue = new Queue('scraping-queue', { connection: config.redis });
-  const sources = [{
-      url: 'https://www.contabeis.com.br/noticias/',
-      source: 'Portal Contábeis',
-      strategy: 'cheerio'
-  }];
+    const scrapingQueue = new Queue('scraping-queue', { connection: config.redis });
+    const sources = [
+        {
+        url: 'https://www.contabeis.com.br/noticias',
+        source: 'Portal Contábeis',
+        strategy: 'cheerio'
+        }
+    ];
   
   let totalLinksFound = 0;
 

@@ -19,9 +19,10 @@ export const NewsArticleSchema = z.object({
     "O conteúdo do artigo é obrigatório e deve ter pelo menos 10 caracteres."
   ),
   author: AuthorSchema.optional(),
-  font:z.string().optional(),
+  font: z.string().optional(),
   source: z.string().min(1, "A fonte é obrigatória."),
-  articleUrl: z.url("A URL do artigo deve ser uma URL válida.")
+  articleUrl: z.url("A URL do artigo deve ser uma URL válida."),
+  imageUrl: z.url("A URL da imagem deve ser uma URL válida.").optional()
 });
 
 

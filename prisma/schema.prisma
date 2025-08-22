@@ -1,10 +1,73 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String               @id @default(uuid())
+  name                String
+  email               String               @unique
+  passwordHash        String
+  profile             ProfileType
+  sector              Sector
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  passwordResetTokens PasswordResetToken[]
+
+  @@map("user")
+}
+
+model Cliente {
+  id           String           @id @default(uuid())
+  cod          Int              @unique
+  nome         String
+  cpf          String           @unique
+  senhaGovHash String
+  email        String?
+  telefone     String?
+  responsavel  String
+  pendencias   String?
+  valorIR      Decimal
+  status       StatusFinanceiro
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@map("cliente")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("password_reset_token")
+}
+
+model NewsArticle {
+  id              String    @id @default(cuid())
+  title           String
+  subtitle        String?
+  articleUrl      String    @unique
+  source          String
+  font            String?
+  theme           String?
+  publicationDate DateTime?
+  articleContent  String
+  author          Json?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  imageUrl        String?
+
+  @@map("news_article")
 }
 
 enum ProfileType {
@@ -23,73 +86,9 @@ enum Sector {
   LEGALIZACAO
 }
 
-model User {
-  id             String      @id    @default(uuid())
-  name           String
-  email          String      @unique
-  passwordHash   String
-
-  profile        ProfileType
-  sector         Sector
-
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-
-  passwordResetTokens PasswordResetToken[]
-
-  @@map("user")
-}
-
 enum StatusFinanceiro {
   EM_DIA
   PENDENTE
   ATRASADO
   NEGOCIANDO
-}
-
-model Cliente {
-  id            String    @id @default(uuid())
-  cod           Int       @unique
-  nome          String    
-  cpf           String    @unique
-  senhaGovHash  String
-  email         String?
-  telefone      String?
-  responsavel   String
-  pendencias    String?
-  valorIR       Decimal
-  status        StatusFinanceiro
-
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
-
-  @@map("cliente")
-}
-
-model PasswordResetToken {
-  id         String   @id @default(uuid())
-  userId     String
-  user       User     @relation(fields: [userId], references: [id])
-  token      String   @unique
-  expiresAt  DateTime
-  used       Boolean  @default(false)
-  createdAt  DateTime @default(now())
-
-  @@map("password_reset_token")
-}
-
-model NewsArticle {
-  id               String    @id @default(cuid())
-  title            String
-  subtitle         String?
-  articleUrl       String    @unique 
-  source           String
-  font             String?
-  theme            String?
-  publicationDate  DateTime?
-  articleContent   String    
-  author           Json?     
-
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
 }
