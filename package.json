@@ -2,9 +2,11 @@
   "name": "saga-hub",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "./prisma/seed.ts"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
-    "seed": "ts-node --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" prisma/seed.ts",
     "build": "next build",
     "start": "next start",
     "start:docker": "prisma migrate deploy && next start",
@@ -12,13 +14,13 @@
     "lint:frontend": "eslint ./public && stylelint '**/*.css'"
   },
   "dependencies": {
-    "@prisma/client": "^6.13.0",
+    "@prisma/client": "^6.14.0",
     "@types/node-cron": "^3.0.11",
     "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
-    "bcryptjs": "^3.0.2",
     "bullmq": "^5.56.9",
     "cheerio": "^1.1.2",
+    "domhandler": "^5.0.3",
     "dompurify": "^3.2.6",
     "form-data": ">=4.0.4",
     "jsdom": "^26.1.0",
@@ -28,22 +30,20 @@
     "ms": "^2.1.3",
     "next": "15.3.5",
     "node-cron": "^4.2.1",
-    "prisma": "^6.13.0",
     "puppeteer": "^24.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "zod": "^4.0.14",
-    "tsx": "^4.19.2"
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/bcrypt": "^5.0.2",
+    "@types/jquery": "^3.5.32",
     "@types/jsdom": "^21.1.7",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/luxon": "^3.7.1",
     "@types/ms": "^2.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -51,8 +51,10 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "eslint-plugin-unicorn": "^59.0.1",
+    "prisma": "^6.14.0",
     "stylelint": "^16.0.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.4",
     "typescript": "^5"
   }
 }
