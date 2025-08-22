@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaPasswordResetTokenRepository } from '@/modules/auth/infrastructure/data/Prisma-passwordResetToken.repository';
-import { hash } from 'bcryptjs';
+import { hash } from 'bcrypt';
 
 export class ResetPasswordUseCase {
     private prisma: PrismaClient;
