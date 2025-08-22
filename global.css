@@ -1,6 +1,6 @@
 /* --- Variáveis e Reset Básico --- */
 :root {
-  --header-height: 70px; /* Altura do seu header. Ajuste se necessário. */
+  --header-height: 70px; /*Altura do seu header. Ajuste se necessário.*/
 }
 
 * {
