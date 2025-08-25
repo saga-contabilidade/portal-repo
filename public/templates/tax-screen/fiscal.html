@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiscal Interno</title>
+    <title>Fiscal</title>
     <link rel="stylesheet" href="/public/styles/global.css">
     <link rel="stylesheet" href="/public/styles/tax-screen/fiscal.css">
     <link rel="stylesheet" href="/public/styles/footer-hub/style.css">
@@ -16,81 +16,86 @@
     <header>
         <div class="container">
             <div class="cabecalho-principal">
-            <a href="/public/templates/news-screen/noticias.html"" class="logo-principal">
-                <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo">
-                <span>SagaHub</span>
-            </a>
-            <nav class="menu-navegacao">
-                <a href="/public/templates/news-screen/noticias.html">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                    <path d="M7 8h10M7 12h6M7 16h6" stroke-linecap="round"/>
-                  </svg>
-                  Notícias
+                <a href="/public/templates/news-screen/noticias.html" class="logo-principal">
+                    <img src="/public/assets/img/logo-cubo.png" alt="SagaHub Logo">
+                    <span>SagaHub</span>
                 </a>
-                <a href="/public/templates/tax-screen/fiscal.html" class="ativo">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="4" width="18" height="16" rx="2"/>
-                    <path d="M7 8h10M7 12h10M7 16h4" stroke-linecap="round"/>
-                  </svg>
-                  Fiscal
-                </a>
-                <a href="/public//templates/kanban-screen/kanban.html">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
-                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
-                  </svg>
-                  Kanban
-                </a>
-                <a href="/public/templates/help-screen/chamados.html">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <rect x="2" y="15" width="4" height="6" rx="2"/>
-                    <rect x="18" y="15" width="4" height="6" rx="2"/>
-                  </svg>
-                  Chamados
-                </a>
-                <a href="/public/templates/chat-screen/chat.html">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  Chat Interno
-                </a>
-            </nav>
-            <div class="area-direita-navbar">
-                <div class="area-notificacoes">
-                    <span class="icone-sino"></span>
-                    <span class="ponto-notificacao"></span>
-                </div>
-                <div class="perfil-usuario">
-                    <span class="icone-perfil"></span>
-                    <div class="informacoes-perfil">
-                        <span class="nome-perfil">João Silva</span>
-                        <span class="cargo-perfil">Admin</span>
+                <nav class="menu-navegacao">
+                    <a href="/public/templates/news-screen/noticias.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="M7 8h10M7 12h6M7 16h6" stroke-linecap="round"/>
+                        </svg>
+                        Notícias
+                    </a>
+                    <a href="/public/templates/tax-screen/fiscal.html" class="ativo">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                          <rect x="8" y="6" width="8" height="4" rx="1"/>
+                          <line x1="8" y1="14" x2="8" y2="14"/>
+                          <line x1="12" y1="14" x2="12" y2="14"/>
+                          <line x1="16" y1="14" x2="16" y2="14"/>
+                          <line x1="8" y1="18" x2="8" y2="18"/>
+                          <line x1="12" y1="18" x2="12" y2="18"/>
+                          <line x1="16" y1="18" x2="16" y2="18"/>
+                      </svg>
+                        Fiscal
+                    </a>
+                    <a href="/public/templates/kanban-screen/kanban.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                        </svg>
+                        Kanban
+                    </a>
+                    <a href="/public/templates/help-screen/chamados.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 15v-2a8 8 0 0 1 16 0v2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2" y="15" width="4" height="6" rx="2"/>
+                            <rect x="18" y="15" width="4" height="6" rx="2"/>
+                        </svg>
+                        Chamados
+                    </a>
+                    <a href="/public/templates/chat-screen/chat.html">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Chat Interno
+                    </a>
+                </nav>
+                <div class="area-direita-navbar">
+                    <div class="area-notificacoes">
+                        <span class="icone-sino"></span>
+                        <span class="ponto-notificacao"></span>
+                    </div>
+                    <div class="perfil-usuario">
+                        <span class="icone-perfil"></span>
+                        <div class="informacoes-perfil">
+                            <span class="nome-perfil">João Silva</span>
+                            <span class="cargo-perfil">Admin</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <main class="main-content">
-        <div class="container">
+
+    <main>
+    <div class="container">
       <div class="fiscal-container">
-        <div class="fiscal-header">
-          <div class="fiscal-header__left">
-            <p>Gerencie documentos fiscais e relatórios</p>
-          </div>
-        </div>
         <div class="fiscal-cards fiscal-cards--duo" id="fiscal-cards-duo">
           <div class="fiscal-card-duo-col">
-            <div class="fiscal-card fiscal-card--compact" id="card-relatorios">
+
+              <div class="fiscal-card fiscal-card--compact fiscal-card--clickable" id="card-xml">
               <div class="fiscal-card__top">
-                <span class="fiscal-card__title">Relatórios Gerados</span>
+                <span class="fiscal-card__title">Relatórios IR's e MEI's</span>
               </div>
-              <div class="fiscal-card__value">45</div>
+              <div class="fiscal-card__value"><img src="/public/assets/svg/Design sem nome.png" alt="XML Importer" style="height:40px;"></div>
               <div class="fiscal-card__desc">
-                Último relatório gerado por: <span class="fiscal-card__user">João Silva</span>
+                Clique para acessar os relatórios
               </div>
             </div>
             <div class="fiscal-card fiscal-card--compact fiscal-card--clickable" id="card-das">
@@ -124,28 +129,25 @@
             </div>
           </div>
         </div>
-        <div id="fiscal-tool-simulation" class="fiscal-panel-card" style="display:none;"></div>
+	<div id="fiscal-tool-simulation" class="fiscal-panel-card" style="display:none;"></div>
         <div id="fiscal-panel-dev" class="fiscal-panel-dev">
           <div class="fiscal-panel-dev__header">
             <span class="fiscal-panel-dev__title">Painel Fiscal</span>
           </div>
           <div class="fiscal-panel-dev__subtitle">Monitore e gerencie suas atividades fiscais</div>
-          <div class="fiscal-panel-dev__content">
-            <div class="fiscal-panel-dev__main">Módulo Fiscal em Desenvolvimento</div>
-            <div class="fiscal-panel-dev__desc">Em breve você poderá gerenciar todos os aspectos fiscais aqui.</div>
-          </div>
         </div>
               </div>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
     <script>
-      fetch("/public/templates/footer-hub/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
+        fetch("/public/templates/footer-hub/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
 </body>
 </html>
-<script src="/public/scripts//tax/fiscal.js" defer></script>
+ 
