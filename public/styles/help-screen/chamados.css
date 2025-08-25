@@ -1,36 +1,73 @@
-/* Estilos específicos para a página de chamados */
+/* Geral */
+.card-padrao {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e0e0e0;
+}
 
 .kanban-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .kanban-title-section {
-    flex: 1;
+    flex-grow: 1;
 }
 
-.kanban-title-section .titulo-pagina {
-    margin: 0 0 8px 0;
-}
-
-.kanban-title-section .subtitulo-pagina {
+.titulo-pagina {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
     margin: 0;
 }
 
+.subtitulo-pagina {
+    font-size: 1rem;
+    color: #666666;
+    margin: 4px 0 0;
+}
+
+.botao-primario {
+    background-color: #8c231f;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.botao-primario:hover {
+    background-color: #8c231f;
+    transform: translateY(-1px);
+}
+
+.botao-primario:active {
+    transform: translateY(0);
+}
+
+/* Cartões de Resumo */
 .summary-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .card-resumo {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 24px;
-    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
 }
 
 .card-resumo-header {
@@ -41,162 +78,173 @@
 }
 
 .card-resumo-titulo {
+    font-size: 1rem;
+    color: #666666;
     font-weight: 600;
-    color: #555;
 }
 
 .card-resumo-icone {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5;
+    border-radius: 50%;
+    padding: 4px;
 }
 
 .card-resumo-icone.alerta {
-    color: #dc3545;
+    color: #8c231f;
+    background-color: #fff3e0;
 }
 
 .card-resumo-icone.andamento {
-    color: #ffc107;
+    color: #2196f3;
+    background-color: #e3f2fd;
 }
 
 .card-resumo-icone.resolvido {
-    color: #28a745;
+    color: #4caf50;
+    background-color: #e8f5e9;
 }
 
 .card-resumo-numero {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
 }
 
-/* Lista de chamados - estilo igual à imagem */
-.lista-chamados {
-    margin-top: 40px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-    padding: 32px 24px;
-    margin-bottom: 48px;
-}
-
+/* Lista de Chamados */
 .lista-chamados-header {
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 
 .titulo-secao {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    color: #1a2a3a;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
+    color: #000000;
+    margin: 0;
 }
 
 .lista-chamados-sub {
-    color: #6c7a89;
-    font-size: 1rem;
-    margin-top: 4px;
-    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #888888;
+    margin: 4px 0 0;
 }
 
 .cards-chamados {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: grid;
+    gap: 24px;
 }
 
+/* Card de Chamado */
 .card-chamado {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(44,62,80,0.07);
-    padding: 20px 24px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ececec;
-    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card-chamado:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card-chamado-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 .chamado-id {
+    font-size: 0.85rem;
     font-weight: 700;
-    color: #2b5fc2;
-    margin-right: 8px;
-    font-size: 1rem;
+    color: #a32924;
+    background-color: #fce7e7;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-right: 12px;
 }
 
 .chamado-titulo {
+    font-size: 1.25rem;
     font-weight: 700;
-    font-size: 1.08rem;
-    color: #1a2a3a;
+    color: #1a1a1a;
+    margin: 0;
+    flex-grow: 1;
 }
 
 .chamado-actions {
     position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
+    display: inline-block;
 }
 
 .dots-btn {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 2px;
-    display: flex;
-    align-items: center;
+    padding: 4px;
+}
+
+.dots-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #888;
 }
 
 .dots-menu {
-    display: none;
     position: absolute;
     right: 0;
-    top: 28px;
-    background: #fff;
-    border: 1px solid #ececec;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-    min-width: 120px;
-    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none;
     flex-direction: column;
+    padding: 8px 0;
+    min-width: 120px;
+}
+
+.dots-menu.visible {
+    display: flex;
 }
 
 .dots-menu button {
-    width: 100%;
     background: none;
     border: none;
-    padding: 10px 18px;
     text-align: left;
+    padding: 10px 16px;
     cursor: pointer;
-    font-size: 15px;
-    color: #a32924;
-    border-radius: 0;
+    font-size: 0.9rem;
+    color: #444;
+    transition: background-color 0.2s;
 }
 
 .dots-menu button:hover {
-    background: #f5f5f5;
+    background-color: #f5f5f5;
 }
 
 .card-chamado-middle {
-    margin: 8px 0 0 0;
+    margin-bottom: 16px;
 }
 
 .chamado-descricao {
-    color: #222;
     font-size: 1rem;
-    margin-bottom: 0;
+    color: #555555;
+    margin: 0;
 }
 
 .card-chamado-bottom {
-    margin-top: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
 }
 
 .chamado-info {
@@ -206,220 +254,273 @@
     flex-wrap: wrap;
 }
 
-.chamado-user {
-    color: #444;
-    font-size: 0.98rem;
+.chamado-user,
+.chamado-date {
+    font-size: 0.85rem;
+    color: #666666;
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.user-icon {
+.chamado-user .user-icon {
     font-size: 1rem;
-    margin-right: 2px;
 }
 
-.chamado-date {
-    color: #888;
-    font-size: 0.98rem;
+/* Novo estilo para o status e prioridade, usando classes mais específicas e com hífen */
+.chamado-prioridade {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
 }
 
-.prioridade {
-    font-size: 0.98rem;
-    font-weight: 500;
-    border-radius: 6px;
-    padding: 2px 10px;
-    margin-left: 0;
-    margin-right: 0;
-    background: #f5f5f5;
+.chamado-prioridade.prioridade-alta {
+    color: #b71c1c;
+    background-color: #ffebee;
 }
 
-.prioridade-alta {
-    color: #c82333;
-    background: #f8d7da;
+.chamado-prioridade.prioridade-media {
+    color: #ff6f00;
+    background-color: #fff8e1;
 }
 
-.prioridade-media {
-    color: #856404;
-    background: #fff3cd;
+.chamado-prioridade.prioridade-baixa {
+    color: #33691e;
+    background-color: #e8f5e9;
 }
 
-.prioridade-baixa {
-    color: #155724;
-    background: #d4edda;
+.chamado-status-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-.status-chamado {
-    font-size: 0.98rem;
-    font-weight: 600;
-    border-radius: 16px;
-    padding: 4px 16px;
-    color: #fff;
-    background: #222;
-    margin-left: 8px;
-    white-space: nowrap;
+.chamado-status {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
 }
 
-.status-aberto {
-    background: #f44336;
+.chamado-status.status-aberto {
+    background-color: #8c231f;
+    color: #ffffff;
 }
 
-.status-andamento {
-    background: #212a3a;
+/* Alterado para usar hífen */
+.chamado-status.status-em-andamento {
+    background-color: #2196f3;
+    color: white;
 }
 
-.status-resolvido {
-    background: #e3eafc;
-    color: #2b5fc2;
+.chamado-status.status-finalizado {
+    background-color: #4caf50;
+    color: white;
+    cursor: default;
 }
 
-/* Responsivo */
-@media (max-width: 700px) {
-    .lista-chamados {
-        padding: 18px 6px;
-    }
-    .card-chamado {
-        padding: 14px 8px;
-    }
-    .card-chamado-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-    }
-    .chamado-info {
-        gap: 8px;
-    }
+/* Estilo e posicionamento do menu de status */
+.status-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    min-width: 150px;
+}
+
+.status-menu.hidden {
+    display: none;
+}
+
+.status-menu button {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #444;
+    transition: background-color 0.2s;
+}
+
+.status-menu button:hover {
+    background-color: #f5f5f5;
 }
 
 /* Modal */
 .modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.3s ease;
 }
-.modal.hidden { display: none; }
+
+.modal.hidden {
+    display: none;
+}
 
 .modal-content {
-  background: white;
-  padding: 24px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 400px;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
 }
 
-#formChamado input,
-#formChamado textarea,
-#formChamado select {
-  width: 100%;
-  margin-bottom: 12px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-#formChamado button {
-  background: #a32924;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px 16px 32px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* Card de chamado */
-#listaChamados {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
 }
 
-.card-chamado {
-  position: relative;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(44,62,80,0.07);
-  padding: 20px 24px;
-  border: 1px solid #ececec;
-  transition: box-shadow 0.2s;
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+    transition: color 0.2s;
 }
 
-.card-chamado strong {
-  font-size: 1.08rem;
-  color: #1a2a3a;
-  margin-bottom: 4px;
-  display: block;
+.close-btn:hover {
+    color: #a32924;
 }
 
-.card-chamado p {
-  margin: 4px 0;
-  color: #222;
-  font-size: 1rem;
+.modal-body {
+    padding: 24px 32px 32px 32px;
 }
 
-.card-chamado span {
-  font-size: 0.98rem;
-  margin-right: 8px;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.menu-acao {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: #888;
-  user-select: none;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
-.menu-opcoes {
-  position: absolute;
-  top: 32px;
-  right: 8px;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  display: none;
-  z-index: 10;
-  min-width: 110px;
-  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #222;
+    font-size: 0.95rem;
 }
 
-.menu-opcoes button {
-  background: none;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  font-size: 1rem;
-  color: #a32924;
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f7f9fb;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
 }
 
-.menu-opcoes button:hover {
-  background: #f5f5f5;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #a32924;
+    box-shadow: 0 0 0 3px rgba(163, 41, 36, 0.1);
 }
 
-/* Prioridade cores */
-.card-chamado span:contains("Alta Prioridade") { color: #c82333; background: #f8d7da; border-radius: 6px; padding: 2px 10px;}
-.card-chamado span:contains("Média Prioridade") { color: #856404; background: #fff3cd; border-radius: 6px; padding: 2px 10px;}
-.card-chamado span:contains("Baixa Prioridade") { color: #155724; background: #d4edda; border-radius: 6px; padding: 2px 10px;}
+.form-group textarea {
+    resize: none;
+    min-height: 80px;
+}
 
-/* Status cores */
-.card-chamado span:contains("Aberto") { background: #f44336; color: #fff; border-radius: 16px; padding: 4px 16px;}
-.card-chamado span:contains("Em Andamento") { background: #212a3a; color: #fff; border-radius: 16px; padding: 4px 16px;}
-.card-chamado span:contains("Resolvido") { background: #e3eafc; color: #2b5fc2; border-radius: 16px; padding: 4px 16px;}
+.modal-footer {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+.cancel-btn {
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+.primary-btn {
+    background: #a32924;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.primary-btn:hover {
+    background: #7d1e1a;
+}
 
 /* Responsivo */
-@media (max-width: 700px) {
-  .modal-content { padding: 12px; }
-  .card-chamado { padding: 12px 6px; }
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .modal-footer {
+        flex-direction: column;
+    }
+    .cancel-btn,
+    .primary-btn {
+        width: 100%;
+    }
 }
-
