@@ -18,20 +18,13 @@ export class PrismaNewsArticleRepository implements INewsArticleRepository{
 
     async findRecentWithSourceDiversity(limit: number): Promise<NewsArticle[]> {
         const query = Prisma.sql`
-            SELECT * FROM (
-            SELECT *,
-            ROW_NUMBER() OVER (PARTITION BY source ORDER BY publishedAt DESC) as rn
-            FROM "NewsArticle"
-            ) AS ranked_articles
-             WHERE rn = 1
-             ORDER BY 
-             "publishedAt" DESC
-              LIMIT ${limit};
-              `;
+            SELECT * FROM "news_article"
+            ORDER BY "publication_date" DESC
+            LIMIT ${limit};
+        `;
         
         const articlesFromDb = await this.prisma.$queryRaw<PrismaNewsArticleModel[]>(query);
-
-        return NewsArticleMapper.toDomainArray(articlesFromDb);
-        
+        console.log(`Artigos encontrados com diversidade de fontes: ${articlesFromDb}`);
+        return NewsArticleMapper.toDomainArray(articlesFromDb);   
     }
 }

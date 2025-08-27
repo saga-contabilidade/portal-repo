@@ -6,7 +6,7 @@ import puppeteer, { Browser, Page } from 'puppeteer';
 import { JSDOM } from 'jsdom';
 import createDOMPurify, { DOMPurify, WindowLike } from 'dompurify';
 import { parsePublicationDate } from '@/utils/Date.helpers';
-import { emptyToUndefined, escapeRegex } from '@/utils/String.helpers';
+import { emptyToUndefined } from '@/utils/String.helpers';
 import { safeAbsoluteUrl, toAbsoluteUrl } from '@/utils/Url.helpers';
 
 export interface Author {
@@ -74,7 +74,8 @@ export class WebScraperProvider implements INewsProvider {
     subtitle: 'h2.linhadeOlho',
     publicationDate: 'meta[itemprop="dateModified"]',
     articleContent: 'div[itemprop="articleBody"]',
-    image: 'script:contains("var conteudoMateria")',
+    ogImage: 'meta[property="og:image"]',
+    image: ".texto .desktop img",
     authorSection: '.autorMateria',
     authorPhoto: '.imagemAutor img',
     authorName: '.textoAutor',
@@ -207,12 +208,18 @@ export class WebScraperProvider implements INewsProvider {
   }
 
   private extractImageData($: CheerioAPI): string | undefined {
-    const scriptContent = $(this.selector.image).html();
-    if (!scriptContent) return undefined;
-
-    const jsonObj = extractJsonObject(scriptContent, 'conteudoMateria');
-    const relativeImageUrl: string | undefined = (jsonObj?.desktop?.imgPadrao) ?? jsonObj?.desktop?.img ?? undefined;
-    return safeAbsoluteUrl(relativeImageUrl, this.baseUrl);
+    const ogImageUrl = $(this.selector.ogImage).attr('content');
+    if (ogImageUrl) {
+      console.log(`A tag imagem foi encontrada no seletor: ${this.selector.ogImage}`);
+      return safeAbsoluteUrl(ogImageUrl, this.baseUrl);
+    }  
+    const imageElement = $(this.selector.image).attr('src');
+    if (imageElement) {
+      console.log(`A tag imagem foi encontrada no seletor: ${this.selector.image}`);
+      return safeAbsoluteUrl(imageElement, this.baseUrl);
+    }
+    console.log('Nenhuma imagem encontrada no artigo.');
+    return undefined;
   }
 
   private extractAllData(
@@ -271,23 +278,6 @@ export class WebScraperProvider implements INewsProvider {
       if (page) {
         try { await page.close(); } catch { /* noop */ }
       }
-    }
-  }
-}
-
-function extractJsonObject(scriptContent: string, varName: string): any | null {
-  const regex = new RegExp(String.raw`var\s+${escapeRegex(varName)}\s*=\s*(\{[\s\S]*?\})\s*;?`);
-  const match = scriptContent.match(regex);
-  if (!match || !match[1]) return null;
-
-  try {
-    return JSON.parse(match[1]);
-  } catch {
-    try {
-      const normalized = match[1].replace(/(['\"])\s*:\s*'/g, '" : "').replace(/'\s*,/g, '",');
-      return JSON.parse(normalized);
-    } catch {
-      return null;
     }
   }
 }
