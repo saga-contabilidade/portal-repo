@@ -11,22 +11,22 @@ export class NewsArticleMapper {
             if (parseResult.success) {
                 authorData = parseResult.data;
             } else {
-                console.warn(`Falha ao validar os dados do autor para o artigo com URL: ${prismaArticle.id}`, parseResult.error);
+                console.warn(`Falha ao validar os dados do autor para o artigo com URL: ${prismaArticle.articleUrl}`, parseResult.error);
                 authorData = undefined;
             }
         }
                 
-
         return {
             theme: prismaArticle.theme ?? undefined,
             title: prismaArticle.title,
             subtitle: prismaArticle.subtitle ?? undefined,
-            publicationDate: prismaArticle.publicationDate ? new Date(prismaArticle.publicationDate) : undefined,
+            publicationDate: prismaArticle.publicationDate ?? undefined,
             articleContent: prismaArticle.articleContent,
             author: authorData,
             font: prismaArticle.font ?? undefined,
             source: prismaArticle.source,
-            articleUrl: prismaArticle.articleUrl
+            articleUrl: prismaArticle.articleUrl,
+            imageUrl: prismaArticle.imageUrl ?? undefined,
         };
     }
     
