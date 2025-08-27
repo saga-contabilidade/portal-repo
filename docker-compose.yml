@@ -11,7 +11,10 @@ services:
       - .env.local
     ports:
       - "3000:3000"
-    command: sh -c "npx prisma migrate deploy && node server.js"
+      - "5555:5555"
+    volumes:
+      - sqlite_data:/app/prisma
+    command: sh -c "npm run start:docker"
     depends_on:
       redis:
         condition: service_healthy
@@ -20,6 +23,8 @@ services:
     image: portal-saga_app
     env_file:
       - .env.local
+    volumes:
+      - sqlite_data:/app/prisma
     command: npx tsx -r tsconfig-paths/register src/scripts/run-work.ts
     depends_on:
       app:
@@ -31,6 +36,8 @@ services:
     image: portal-saga_app
     env_file:
       - .env.local
+    volumes:
+      - sqlite_data:/app/prisma
     command: npx prisma migrate deploy
 
   redis:
@@ -47,3 +54,4 @@ services:
 
 volumes:
   redis_data:
+  sqlite_data:
