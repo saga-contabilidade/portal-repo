@@ -1,2 +1,26 @@
-@import url("../../global.css");
+@import "tailwindcss";
+
+@theme{
+  --color-background: #F9FAFB;
+  --color-foreground: #FFFFFF;
+  --color-primary: #a32924;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F3F4F6;
+  --color-secondary-foreground: #1F2937;
+  --color-accent: #a32924;
+  --color-muted: #F3F4F6;
+  --color-muted-foreground: #6B7281;
+  --color-border: #D1D5DB;
+
+  font-family: var(--font-lufga-sans), sans-serif; 
+  font-size: 1rem;
+}
+
+@layer{
+  body{
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Lufga', sans-serif;
+  }
+}
 
